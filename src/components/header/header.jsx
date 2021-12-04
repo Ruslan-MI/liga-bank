@@ -1,13 +1,17 @@
 import React from "react";
 
-import logo from "./img/main-logo-mobile.svg";
+import mobileLogo from "./img/main-logo-mobile.svg";
+import tabletLogo from "./img/main-logo-tablet.svg";
 
 const Header = () => (
   <header className="page__header header">
     <nav className="header__nav header__nav--menu-closed wrapper">
       <div className="header__nav-wrapper header__nav-wrapper--first">
         <a className="header__logo-link" href="#" title="Перейти на главную">
-          <img className="header__logo-image" src={logo} alt="ЛИГА Банк" width="116" height="19" />
+          <picture>
+            <source media="(min-width: 768px)" srcSet={tabletLogo} />
+            <img className="header__logo-image" src={mobileLogo} alt="ЛИГА Банк" width="116" height="19" />
+          </picture>
         </a>
         <button className="header__nav-button header__nav-button--open-menu" type="button">
           <span className="visually-hidden">Открыть меню</span>

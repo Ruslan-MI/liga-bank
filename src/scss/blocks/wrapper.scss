@@ -5,3 +5,11 @@
   max-width: $mobile-wrapper;
   outline: 2px solid aqua;
 }
+
+@media (min-width: $tablet-breakpoint) {
+  .wrapper {
+    max-width: $tablet-wrapper;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
