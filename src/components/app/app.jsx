@@ -1,5 +1,9 @@
 import React from "react";
 
-const App = () => (<div />);
+import Calculator from "../pages/calculator/calculator";
+
+const App = () => (
+  <Calculator />
+);
 
 export default App;

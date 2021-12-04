@@ -1,0 +1,113 @@
+.header {
+  background-color: $header-background;
+}
+
+.header__nav {
+  padding: 0;
+
+  &--menu-closed {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.header__nav--menu-closed .header__nav-button--close-menu {
+  display: none;
+}
+
+.header__nav-wrapper {
+  &--first {
+    padding: 0 44px;
+    position: relative;
+  }
+
+  &--second {
+    padding: 31px 15px 20px;
+  }
+}
+
+.header__nav--menu-closed .header__nav-wrapper--second {
+  padding: 0;
+  margin-left: auto;
+}
+
+.header__logo-link {
+  display: block;
+  padding: 14px 0 10px;
+  width: fit-content;
+}
+
+.header__logo-image {
+  width: 116px;
+  height: 19px;
+}
+
+.header__nav-button {
+  position: absolute;
+  top: 0;
+  width: 46px;
+  height: 48px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
+  background-color: inherit;
+
+  &--open-menu {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1h16M0 6h16M0 11h16' stroke='%231F1E25' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    left: 0;
+  }
+
+  &--close-menu {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 1 6.5 6.5M14 14 7.5 7.5m0 0L14 1 1 14' stroke='%23011C40' stroke-width='2'/%3E%3C/svg%3E");
+    right: 0;
+    width: 44px;
+    background-origin: content-box;
+    padding-bottom: 4px;
+  }
+}
+
+.header__nav-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.header__nav--menu-closed .header__nav-list--main-nav {
+  display: none;
+}
+
+.header__nav-item {
+  border-bottom: 1px solid $nav-border;
+
+  &--main-nav:first-child {
+    border-top: 1px solid $nav-border;
+  }
+}
+
+.header__nav--menu-closed .header__nav-item {
+  border: none;
+}
+
+.header__nav-link {
+  color: inherit;
+  font-size: 16px;
+  display: block;
+  padding: 22px 15px 19px;
+
+  &--log-in {
+    padding-left: 45px;
+    background-image: url("./img/log-in.svg");
+    background-repeat: no-repeat;
+    background-position: 15px 19px;
+  }
+}
+
+.header__nav--menu-closed .header__nav-link--log-in {
+  font-size: 0;
+  padding: 0;
+  width: 44px;
+  height: 48px;
+  background-position: center;
+  background-size: 14px 16px;
+}

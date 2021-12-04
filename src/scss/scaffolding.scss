@@ -12,7 +12,10 @@ html {
 body {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 18px;
+  color: $general-text;
   font-weight: 400;
+  background-color: $general-white;
+  min-width: $mobile-width;
   height: 100%;
 }
 

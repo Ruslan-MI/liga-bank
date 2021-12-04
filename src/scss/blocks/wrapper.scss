@@ -1,6 +1,7 @@
 .wrapper {
   margin: 0 auto;
-  max-width: $desktop-wrapper;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: $mobile-wrapper;
+  outline: 2px solid aqua;
 }
