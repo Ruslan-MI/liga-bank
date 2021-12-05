@@ -13,3 +13,11 @@
     padding-right: 45px;
   }
 }
+
+@media (min-width: $desktop-breakpoint) {
+  .wrapper {
+    max-width: $desktop-wrapper;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

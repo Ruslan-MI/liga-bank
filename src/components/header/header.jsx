@@ -2,6 +2,7 @@ import React from "react";
 
 import mobileLogo from "./img/main-logo-mobile.svg";
 import tabletLogo from "./img/main-logo-tablet.svg";
+import desktopLogo from "./img/main-logo-desktop.svg";
 
 const Header = () => (
   <header className="page__header header">
@@ -9,6 +10,7 @@ const Header = () => (
       <div className="header__nav-wrapper header__nav-wrapper--first">
         <a className="header__logo-link" href="#" title="Перейти на главную">
           <picture>
+            <source media="(min-width: 1024px)" srcSet={desktopLogo} />
             <source media="(min-width: 768px)" srcSet={tabletLogo} />
             <img className="header__logo-image" src={mobileLogo} alt="ЛИГА Банк" width="116" height="19" />
           </picture>
