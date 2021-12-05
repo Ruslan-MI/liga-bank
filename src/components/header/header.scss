@@ -107,6 +107,10 @@
     }
   }
 
+  .header__nav--menu-opened .header__logo-link {
+    width: fit-content;
+  }
+
   .header__nav--menu-opened .header__nav-button {
     &--close-menu {
       display: block;
