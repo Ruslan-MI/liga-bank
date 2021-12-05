@@ -14,14 +14,13 @@
   }
 
   &--second {
-    padding: 31px 15px 20px;
+    margin-left: auto;
   }
 }
 
 .header__logo-link {
   display: block;
   padding: 14px 0 10px;
-  width: fit-content;
 }
 
 .header__logo-image {
@@ -36,9 +35,9 @@
   height: 48px;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: inherit;
   border: none;
   padding: 0;
-  background-color: inherit;
 
   &--open-menu {
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1h16M0 6h16M0 11h16' stroke='%231F1E25' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
@@ -46,11 +45,7 @@
   }
 
   &--close-menu {
-    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 1 6.5 6.5M14 14 7.5 7.5m0 0L14 1 1 14' stroke='%23011C40' stroke-width='2'/%3E%3C/svg%3E");
-    right: 0;
-    width: 44px;
-    background-origin: content-box;
-    padding-bottom: 4px;
+    display: none;
   }
 }
 
@@ -58,19 +53,28 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  font-size: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+
+  &--main-nav {
+    display: none;
+  }
+
+  &--user-nav {
+    width: 100px;
+  }
 }
 
 .header__nav-link {
   color: inherit;
-  font-size: 16px;
   display: block;
-  padding: 22px 15px 19px;
 
   &--log-in {
-    padding-left: 45px;
+    font-size: 0;
+    width: 44px;
+    height: 48px;
     position: relative;
   }
 
@@ -78,13 +82,14 @@
     content: "";
     display: block;
     position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 18px;
-    left: 13px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     background-image: url("./img/log-in.svg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 14px 16px;
   }
 }
 
@@ -93,34 +98,36 @@
     padding: 0;
   }
 
-  .header__nav:not(.header__nav--menu-closed) .header__nav-wrapper {
+  .header__nav--menu-opened .header__nav-wrapper {
     width: 100%;
-  }
 
-  .header__nav--menu-closed .header__nav-wrapper {
     &--second {
-      padding: 0;
-      margin-left: auto;
+      padding: 31px 15px 20px;
     }
   }
 
-  .header__nav--menu-closed .header__nav-button {
+  .header__nav--menu-opened .header__nav-button {
     &--close-menu {
-      display: none;
+      display: block;
+      background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 1 6.5 6.5M14 14 7.5 7.5m0 0L14 1 1 14' stroke='%23011C40' stroke-width='2'/%3E%3C/svg%3E");
+      background-origin: content-box;
+      width: 44px;
+      right: 0;
+      padding-bottom: 4px;
     }
   }
 
-  .header__nav--menu-closed .header__nav-list {
+  .header__nav--menu-opened .header__nav-list {
     &--main-nav {
-      display: none;
+      display: flex;
     }
 
     &--user-nav {
-      width: 100px;
+      width: auto;
     }
   }
 
-  .header__nav:not(.header__nav--menu-closed) .header__nav-item {
+  .header__nav--menu-opened .header__nav-item {
     border-bottom: 1px solid $nav-border;
     width: 100%;
 
@@ -129,20 +136,22 @@
     }
   }
 
-  .header__nav--menu-closed .header__nav-link {
+  .header__nav--menu-opened .header__nav-link {
+    padding: 22px 15px 19px;
+
     &--log-in {
-      font-size: 0;
-      padding: 0;
-      width: 44px;
-      height: 48px;
+      padding-left: 45px;
+      font-size: inherit;
+      width: auto;
+      height: auto;
     }
 
     &--log-in::before {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-size: 14px 16px;
+      width: 24px;
+      height: 24px;
+      top: 18px;
+      left: 13px;
+      background-size: auto;
     }
   }
 }
@@ -154,12 +163,13 @@
   }
 
   .header__nav-wrapper {
-    padding: 0;
+    &--first {
+      padding: 0;
+    }
 
     &--second {
       display: flex;
       flex-wrap: wrap;
-      margin-left: auto;
     }
   }
 
@@ -179,7 +189,10 @@
   }
 
   .header__nav-list {
+    font-size: 14px;
+
     &--main-nav {
+      display: flex;
       width: 450px;
     }
 
@@ -195,21 +208,14 @@
   }
 
   .header__nav-link {
-    font-size: 14px;
-    padding: 0;
-
     &--log-in {
-      font-size: 0;
       width: 40px;
       height: 30px;
       transform: translateX(10px);
     }
 
     &--log-in::before {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      background-size: auto;
     }
   }
 }
@@ -238,9 +244,10 @@
   }
 
   .header__nav-list {
+    font-size: 16px;
+
     &--main-nav {
       width: 500px;
-      padding: 0;
     }
 
     &--user-nav {
@@ -254,9 +261,8 @@
   }
 
   .header__nav-link {
-    font-size: 16px;
-
     &--log-in {
+      font-size: inherit;
       width: auto;
       height: auto;
       transform: none;
@@ -266,8 +272,6 @@
     &--log-in::before {
       width: 20px;
       height: 22px;
-      top: 0;
-      left: 0;
       transform: translateY(-3px);
     }
   }
