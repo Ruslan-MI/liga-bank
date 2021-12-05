@@ -54,6 +54,7 @@
   margin: 0;
   list-style: none;
   font-size: 16px;
+  line-height: 19px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -137,7 +138,7 @@
   }
 
   .header__nav--menu-opened .header__nav-link {
-    padding: 22px 15px 19px;
+    padding: 20px 15px;
 
     &--log-in {
       padding-left: 45px;
@@ -149,7 +150,7 @@
     &--log-in::before {
       width: 24px;
       height: 24px;
-      top: 18px;
+      top: 17px;
       left: 13px;
       background-size: auto;
     }
@@ -190,6 +191,7 @@
 
   .header__nav-list {
     font-size: 14px;
+    line-height: 16px;
 
     &--main-nav {
       display: flex;
@@ -222,8 +224,8 @@
 
 @media (min-width: $desktop-breakpoint) {
   .header__nav {
-    padding-top: 27px;
-    padding-bottom: 27px;
+    padding-top: 26px;
+    padding-bottom: 26px;
   }
 
   .header__nav-wrapper {
@@ -233,18 +235,18 @@
 
     &--second {
       flex-grow: 1;
-      max-width: 938px;
+      max-width: 939px;
     }
   }
 
   .header__logo-image {
     width: 150px;
     height: 27px;
-    transform: translate(-1px, -1px);
   }
 
   .header__nav-list {
     font-size: 16px;
+    line-height: 19px;
 
     &--main-nav {
       width: 500px;
@@ -272,7 +274,7 @@
     &--log-in::before {
       width: 20px;
       height: 22px;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
   }
 }
