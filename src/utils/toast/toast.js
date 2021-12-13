@@ -1,6 +1,6 @@
 import "./toast.css";
 
-const SHOW_TIME = 2000;
+const SHOW_TIME = 1000;
 
 const toastContainer = document.createElement(`div`);
 toastContainer.classList.add(`toast-container`);

@@ -17,7 +17,11 @@ ReactDOM.render((
 ), document.querySelector(`#root`));
 
 document.querySelectorAll(`a[href="#"]`).forEach((item) => {
-  item.onclick = () => toast(`Nope`);
+  item.onclick = (evt) => {
+    evt.preventDefault(evt);
+
+    toast(item.title || item.textContent);
+  };
 });
 
 reportWebVitals();
