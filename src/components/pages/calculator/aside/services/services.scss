@@ -153,6 +153,84 @@
   }
 }
 
+@media (min-width: $tablet-breakpoint) {
+  .services__content {
+    min-height: 380px;
+    font-size: 16px;
+  }
+
+  .services__content-wrapper {
+    max-width: none;
+  }
+
+  .services__content-heading {
+    font-size: 18px;
+
+    &--online-services {
+      max-width: 340px;
+    }
+  }
+
+  .services__picture {
+    width: 42.6%;
+    max-width: 394px;
+    height: 260px;
+    transform: translateY(-45px);
+
+    &--deposits {
+      background-position: 95.5% -1px;
+      background-size: cover;
+    }
+
+    &--credits {
+      background-position: 97% 2px;
+      background-size: 390px;
+    }
+
+    &--insurance {
+      background-position: -25px 21px;
+      background-size: 345px;
+      width: 289px;
+    }
+
+    &--online-services {
+      width: 289px;
+    }
+  }
+
+  .services__description-list {
+    max-width: 360px;
+    margin-top: 24px;
+
+    &--online-services {
+      max-width: 330px;
+    }
+  }
+
+  .services__description-item {
+    padding: 0 0 15px 21px;
+
+    &::before {
+      width: 13px;
+      height: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 4 5.238 5L12 1' stroke='%231F1E25' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+      transform: translate(-1px, 5px);
+    }
+  }
+
+  .services__link {
+    font-size: 16px;
+    margin-top: 14px;
+    padding: 16px 14px 16px 13px;
+    width: 198px;
+  }
+
+  .services__offer {
+    margin-top: 13px;
+  }
+}
+
 @media (min-width: $desktop-breakpoint) {
   .services {
     padding-top: 60px;
