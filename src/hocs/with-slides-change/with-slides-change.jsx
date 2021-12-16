@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 import {
   ShiftDirection,
-} from "../const";
+} from "../../const";
 
 const MIN_DOCUMENT_PART_FOR_SWIPE = 0.2;
 

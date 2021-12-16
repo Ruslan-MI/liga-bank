@@ -5,7 +5,8 @@ import React, {
 import PropTypes from "prop-types";
 
 import SliderPagination from "../../../../slider-pagination/slider-pagination";
-import withSlidesChange from "../../../../../hocs/with-slides-change";
+import withSlidesChange from "../../../../../hocs/with-slides-change/with-slides-change";
+
 import {
   getSlideIndex,
 } from "../../../../../utils/utils";
