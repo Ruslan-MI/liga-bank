@@ -6,6 +6,153 @@
   display: none;
 }
 
+.services__slide-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services__slide-item {
+  display: none;
+
+  &--current {
+    display: block;
+  }
+}
+
+.services__content {
+  position: relative;
+  padding: 55px 0 50px;
+  min-height: 362px;
+  background-color: $header-background;
+  font-size: 14px;
+  line-height: 140%;
+  white-space: pre-line;
+}
+
+.services__content-wrapper {
+  max-width: 708px;
+
+  &--picture {
+    max-width: 678px;
+  }
+}
+
+.services__content-heading {
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: 500;
+  margin: 0;
+
+  &--online-services {
+    max-width: 300px;
+    margin-right: 20%;
+  }
+}
+
+.services__picture {
+  display: block;
+  width: 27%;
+  height: 113px;
+  margin-left: 10px;
+  transform: translateY(-2px);
+  background-repeat: no-repeat;
+  float: right;
+
+  &--deposits {
+    background-position: 75.7% -51px;
+    background-size: 251px;
+  }
+
+  &--credits {
+    background-position: 40.5% -9px;
+    background-size: 196px;
+  }
+
+  &--insurance {
+    margin-left: -5px;
+    background-position: 48.5% 7px;
+    background-size: 143px;
+    max-width: 140px;
+  }
+
+  &--online-services {
+    width: 87px;
+    transform: translateY(-23px);
+    margin-left: 5px;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.services__description-list {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  line-height: 130%;
+  max-width: 310px;
+
+  &--online-services {
+    max-width: 290px;
+  }
+}
+
+.services__description-item {
+  padding: 0 0 12px 15px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-1px, 4px);
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.25 4.81 7 9 1' stroke='%231F1E25' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.services__link {
+  color: $header-background;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  display: block;
+  margin-top: 12px;
+  background-color: $link-background;
+  padding: 15px 10px 12px 8px;
+  text-align: center;
+  border-radius: 4px;
+
+  &--insurance {
+    margin-top: 13px;
+  }
+}
+
+.services__offer {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.services__offer-link {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .services__content-wrapper {
+    &--picture {
+      padding: 0;
+    }
+  }
+}
+
 @media (min-width: $desktop-breakpoint) {
   .services {
     padding-top: 60px;
