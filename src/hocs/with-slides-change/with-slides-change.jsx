@@ -2,7 +2,6 @@ import React, {
   useState,
   useEffect,
 } from "react";
-import PropTypes from "prop-types";
 
 import {
   ShiftDirection,
@@ -10,11 +9,8 @@ import {
 
 const MIN_DOCUMENT_PART_FOR_SWIPE = 0.2;
 
-const withSlidesChange = (Component) => {
-  const WithSlidesChangeComponent = ({
-    slidesChangeInterval = 0,
-    ...props
-  }) => {
+const withSlidesChange = (Component, slidesChangeInterval) => {
+  const WithSlidesChangeComponent = (props) => {
     const [
       state,
       setState,
@@ -85,10 +81,6 @@ const withSlidesChange = (Component) => {
 
     return <Component {...props} slidesChange={state.slidesChange}
       onSlidesChange={onSlidesChange} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} />;
-  };
-
-  WithSlidesChangeComponent.propTypes = {
-    slidesChangeInterval: PropTypes.number,
   };
 
   return WithSlidesChangeComponent;

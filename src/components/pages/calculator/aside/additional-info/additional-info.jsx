@@ -17,6 +17,8 @@ import {
   getAdditionalInfoData,
 } from "../../../../../mocks";
 
+const SLIDES_CHANGE_INTERVAL = 4000;
+
 const AdditionalInfo = ({
   slidesChange,
   onSlidesChange,
@@ -111,4 +113,4 @@ AdditionalInfo.propTypes = {
   onTouchEnd: PropTypes.func.isRequired,
 };
 
-export default withSlidesChange(AdditionalInfo);
+export default withSlidesChange(AdditionalInfo, SLIDES_CHANGE_INTERVAL);
