@@ -1,0 +1,75 @@
+.tabs {
+  display: none;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .tabs {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    font-weight: 500;
+    line-height: 21px;
+  }
+
+  .tabs__paragraph {
+    margin: 0;
+  }
+
+  .tabs__label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 93px;
+    padding: 11px 10px 10px 11px;
+    color: $tab-text;
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: "";
+      display: block;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: translateY(-1px);
+    }
+
+    &--deposits::before {
+      width: 34px;
+      height: 33px;
+      background-image: url("./img/vault.svg");
+    }
+
+    &--credits::before {
+      width: 34px;
+      height: 30px;
+      background-image: url("./img/cards.svg");
+    }
+
+    &--insurance::before {
+      width: 28px;
+      height: 34px;
+      background-image: url("./img/security.svg");
+    }
+
+    &--online-services::before {
+      width: 20px;
+      height: 34px;
+      background-image: url("./img/phone.svg");
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  .tabs__input:checked + .tabs__label {
+    color: inherit;
+    background-color: $header-background;
+  }
+
+  .tabs__input:focus + .tabs__label {
+    outline: 1px auto $general-black;
+  }
+}

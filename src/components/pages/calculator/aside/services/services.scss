@@ -2,10 +2,6 @@
   position: relative;
 }
 
-.services__nav-fieldset {
-  display: none;
-}
-
 .services__slide-list {
   margin: 0;
   padding: 0;
@@ -235,75 +231,5 @@
   .services {
     padding-top: 60px;
     padding-bottom: 60px;
-  }
-
-  .services__nav-fieldset {
-    margin: 0;
-    padding: 0;
-    border: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    text-align: center;
-    font-weight: 500;
-    line-height: 21px;
-  }
-
-  .services__nav-paragraph {
-    margin: 0;
-  }
-
-  .services__nav-label {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 93px;
-    padding: 11px 10px 10px 11px;
-    color: $tab-text;
-    cursor: pointer;
-    user-select: none;
-
-    &::before {
-      content: "";
-      display: block;
-      margin-right: 10px;
-      background-repeat: no-repeat;
-      background-position: center;
-      transform: translateY(-1px);
-    }
-
-    &--deposits::before {
-      width: 34px;
-      height: 33px;
-      background-image: url("./img/vault.svg");
-    }
-
-    &--credits::before {
-      width: 34px;
-      height: 30px;
-      background-image: url("./img/cards.svg");
-    }
-
-    &--insurance::before {
-      width: 28px;
-      height: 34px;
-      background-image: url("./img/security.svg");
-      transform: translate(1px, -1px);
-    }
-
-    &--online-services::before {
-      width: 20px;
-      height: 34px;
-      background-image: url("./img/phone.svg");
-    }
-  }
-
-  .services__nav-input:checked + .services__nav-label {
-    color: inherit;
-    background-color: $header-background;
-  }
-
-  .services__nav-input:focus + .services__nav-label {
-    outline: 1px auto $general-black;
   }
 }

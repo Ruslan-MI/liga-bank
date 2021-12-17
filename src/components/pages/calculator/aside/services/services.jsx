@@ -4,6 +4,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 
+import Tabs from "./tabs/tabs";
 import SliderPagination from "../../../../slider-pagination/slider-pagination";
 import withSlidesChange from "../../../../../hocs/with-slides-change/with-slides-change";
 
@@ -39,7 +40,7 @@ const Services = ({
     onTouchEnd(evt);
   };
 
-  const handleCurrentTabChange = (evt) => {
+  const onChange = (evt) => {
     setState((prevState) => ({
       ...prevState,
       currentSlideIndex: prevState.slidesData.findIndex((item) => item.name === evt.target.value),
@@ -63,18 +64,15 @@ const Services = ({
     <section className="aside__services services"
       onTouchStart={handleSectionTouchStart} onTouchEnd={handleSectionTouchEnd} >
       <h2 className="services__heading visually-hidden">Подробная информация</h2>
-      <fieldset className="services__nav-fieldset" onChange={handleCurrentTabChange}>
-        {state.slidesData.map(({
-          name,
-          title,
-          id,
-        }, i) => (
-          <p className="services__nav-paragraph" key={id}>
-            <input className="services__nav-input visually-hidden" type="radio" name="tab"
-              value={name} id={id} defaultChecked={i === state.currentSlideIndex} />
-            <label className={`services__nav-label services__nav-label--${name}`} htmlFor={id}>{title}</label>
-          </p>))}
-      </fieldset>
+      <Tabs tabsData={state.slidesData.map(({
+        name,
+        title,
+        id,
+      }) => ({
+        name,
+        title,
+        id,
+      }))} currentTabIndex={state.currentSlideIndex} onChange={onChange} />
       <ul className="services__slide-list">
         {state.slidesData.map(({
           name,
