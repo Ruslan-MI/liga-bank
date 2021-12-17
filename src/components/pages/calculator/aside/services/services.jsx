@@ -100,9 +100,7 @@ const Services = ({
                   ))}
                 </ul>
                 {link && <a className={`services__link services__link--${name}`} href={link.href}>{link.title}</a>}
-                {offer && <p className="services__offer">{offer.text}
-                  <a className="services__offer-link" href={offer.link.href}>{offer.link.title}</a>
-                </p>}
+                {offer && <p className="services__offer" dangerouslySetInnerHTML={offer} />}
               </div>
             </article>
           </li>
