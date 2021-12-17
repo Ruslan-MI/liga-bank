@@ -13,9 +13,10 @@ $dark-text: #2b3c4f;
 $tab-text: #4c4b51;
 
 // Breakpoints
-$mobile-breakpoint: 767px;
-$tablet-breakpoint: 768px;
-$desktop-breakpoint: 1024px;
+$mobile-max-breakpoint: 767px;
+$tablet-min-breakpoint: 768px;
+$tablet-max-breakpoint: 1023px;
+$desktop-min-breakpoint: 1024px;
 
 // Body width
 $mobile-width: 320px;

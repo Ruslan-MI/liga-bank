@@ -98,7 +98,8 @@ const AdditionalInfo = ({
           </li>
         ))}
       </ul>
-      <SliderPagination slidesData={state.slidesData.map((item) => item.id)} currentSlideIndex={state.currentSlideIndex} />
+      <SliderPagination className="additional-info__pagination"
+        slidesData={state.slidesData.map((item) => item.id)} currentSlideIndex={state.currentSlideIndex} />
     </section>
   );
 };

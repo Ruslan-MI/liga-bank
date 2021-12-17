@@ -5,14 +5,14 @@
   outline: 2px solid aqua;
 }
 
-@media (min-width: $tablet-breakpoint) {
+@media (min-width: $tablet-min-breakpoint) {
   .wrapper {
     padding-left: 45px;
     padding-right: 45px;
   }
 }
 
-@media (min-width: $desktop-breakpoint) {
+@media (min-width: $desktop-min-breakpoint) {
   .wrapper {
     max-width: $desktop-wrapper;
     padding-left: 20px;

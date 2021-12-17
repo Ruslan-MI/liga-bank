@@ -61,7 +61,7 @@ const Services = ({
   ]);
 
   return (
-    <section className="aside__services services"
+    <section className="aside__services services wrapper"
       onTouchStart={handleSectionTouchStart} onTouchEnd={handleSectionTouchEnd} >
       <h2 className="services__heading visually-hidden">Подробная информация</h2>
       <Tabs tabsData={state.slidesData.map(({
@@ -85,15 +85,15 @@ const Services = ({
         }, i) => (
           <li className={`services__slide-item ${i === state.currentSlideIndex ? `services__slide-item--current` : ``}`} key={id}>
             <article className="services__content">
-              <div className="services__content-wrapper wrapper">
+              <div className="services__content-wrapper">
                 <h3 className={`services__content-heading services__content-heading--${name}`}>{heading}</h3>
               </div>
-              <div className="services__content-wrapper services__content-wrapper--picture wrapper">
+              <div className="services__content-wrapper services__content-wrapper--picture">
                 <div className={`services__picture services__picture--${name}`} style={{
                   backgroundImage: `url(${picture})`,
                 }} />
               </div>
-              <div className="services__content-wrapper wrapper">
+              <div className="services__content-wrapper">
                 <ul className={`services__description-list services__description-list--${name}`}>
                   {description.map((item) => (
                     <li className="services__description-item" key={item}>{item}</li>
@@ -108,7 +108,8 @@ const Services = ({
           </li>
         ))}
       </ul>
-      <SliderPagination slidesData={state.slidesData.map((item) => item.id)} currentSlideIndex={state.currentSlideIndex} />
+      <SliderPagination className="services__pagination"
+        slidesData={state.slidesData.map((item) => item.id)} currentSlideIndex={state.currentSlideIndex} />
     </section>
   );
 };

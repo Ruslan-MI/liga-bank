@@ -95,7 +95,7 @@
   }
 }
 
-@media (max-width: $mobile-breakpoint) {
+@media (max-width: $mobile-max-breakpoint) {
   .header__nav {
     padding: 0;
   }
@@ -162,7 +162,7 @@
   }
 }
 
-@media (min-width: $tablet-breakpoint) {
+@media (min-width: $tablet-min-breakpoint) {
   .header__nav {
     padding-top: 19px;
     padding-bottom: 14px;
@@ -228,7 +228,7 @@
   }
 }
 
-@media (min-width: $desktop-breakpoint) {
+@media (min-width: $desktop-min-breakpoint) {
   .header__nav {
     padding-top: 26px;
     padding-bottom: 26px;

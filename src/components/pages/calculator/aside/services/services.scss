@@ -18,7 +18,7 @@
 
 .services__content {
   position: relative;
-  padding: 55px 0 50px;
+  padding: 55px 15px 50px;
   min-height: 362px;
   background-color: $header-background;
   font-size: 14px;
@@ -27,6 +27,7 @@
 }
 
 .services__content-wrapper {
+  margin: 0 auto;
   max-width: 708px;
 
   &--picture {
@@ -48,9 +49,11 @@
 
 .services__picture {
   display: block;
-  width: 27%;
+  width: 30%;
+  max-width: 171px;
   height: 113px;
   margin-left: 10px;
+  margin-right: -15px;
   transform: translateY(-2px);
   background-repeat: no-repeat;
   float: right;
@@ -66,14 +69,12 @@
   }
 
   &--insurance {
-    margin-left: -5px;
-    background-position: 48.5% 7px;
-    background-size: 143px;
-    max-width: 140px;
+    margin-left: -10px;
+    background-position: 48% 7px;
+    background-size: 142px;
   }
 
   &--online-services {
-    width: 87px;
     transform: translateY(-23px);
     margin-left: 5px;
     background-position: center;
@@ -141,22 +142,30 @@
   text-decoration: underline;
 }
 
-@media (max-width: $mobile-breakpoint) {
-  .services__content-wrapper {
-    &--picture {
-      padding: 0;
-    }
-  }
+.services__pagination {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
-@media (min-width: $tablet-breakpoint) {
+@media (min-width: $tablet-min-breakpoint) {
   .services__content {
     min-height: 380px;
     font-size: 16px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
   .services__content-wrapper {
     max-width: none;
+
+    &--picture {
+      width: 37.6%;
+      position: absolute;
+      top: 50%;
+      right: 45px;
+      transform: translateY(-50%);
+    }
   }
 
   .services__content-heading {
@@ -168,10 +177,12 @@
   }
 
   .services__picture {
-    width: 42.6%;
+    width: 100%;
     max-width: 394px;
     height: 260px;
-    transform: translateY(-45px);
+    margin: 0;
+    transform: none;
+    float: none;
 
     &--deposits {
       background-position: 95.5% -1px;
@@ -227,9 +238,66 @@
   }
 }
 
-@media (min-width: $desktop-breakpoint) {
+@media (max-width: $tablet-max-breakpoint) {
+  .services {
+    padding: 0;
+  }
+}
+
+@media (min-width: $desktop-min-breakpoint) {
   .services {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  .services__content {
+    font-size: 18px;
+    padding: 54px 25px 53px;
+    min-height: auto;
+  }
+
+  .services__content-wrapper {
+    max-width: 1030px;
+
+    &--picture {
+      width: auto;
+      right: auto;
+      left: 50%;
+      transform: translate(10px, -50%);
+    }
+  }
+
+  .services__content-heading {
+    font-size: 22px;
+
+    &--online-services {
+      max-width: 420px;
+    }
+  }
+
+  .services__picture {
+    max-width: none;
+    width: 440px;
+    height: 290px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .services__description-list {
+    margin-top: 27px;
+    max-width: 400px;
+
+    &--online-services {
+      max-width: 370px;
+    }
+  }
+
+  .services__link {
+    margin: 18px 0 7px;
+    padding: 18px 14px 17px 13px;
+  }
+
+  .services__pagination {
+    display: none;
   }
 }
