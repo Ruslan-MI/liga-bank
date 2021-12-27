@@ -16,7 +16,7 @@ import {
 } from "../../../../../mocks";
 import {
   getSlideIndex,
-} from "../../../../../utils/utils";
+} from "../../../../../utils/common";
 
 const Services = ({
   slidesChange,

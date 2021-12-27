@@ -9,7 +9,7 @@ import withSlidesChange from "../../../../../hocs/with-slides-change/with-slides
 
 import {
   getSlideIndex,
-} from "../../../../../utils/utils";
+} from "../../../../../utils/common";
 import {
   FIRST_SLIDE_INDEX,
 } from "../../../../../const";
@@ -82,19 +82,17 @@ const AdditionalInfo = ({
                 </h3>
                 <p className={`additional-info__slogan additional-info__slogan--${name}`}>{slogan}</p>
                 {link && <a className={`additional-info__link additional-info__link--${name}`} href={link.href}>{link.title}</a>}
-                {images && (
+                {images &&
                   <div className="additional-info__image-wrapper">
                     {images.map(({
                       title,
                       src,
                       description,
                       id: imageID,
-                    }) => (
+                    }) =>
                       <img className={`additional-info__image additional-info__image--${title}`}
-                        src={src} alt={description} width="211" height="133" key={imageID} />
-                    ))}
-                  </div>
-                )}
+                        src={src} alt={description} width="211" height="133" key={imageID} />)}
+                  </div>}
               </div>
             </article>
           </li>

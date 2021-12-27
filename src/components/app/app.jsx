@@ -1,9 +1,9 @@
 import React from "react";
 
-import Calculator from "../pages/calculator/calculator";
+import Credit from "../pages/credit/credit";
 
 const App = () => (
-  <Calculator />
+  <Credit />
 );
 
 export default App;
