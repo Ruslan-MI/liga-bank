@@ -12,8 +12,10 @@ import {
 } from "../../../../../../store/selectors";
 import {
   StoreNameSpace,
+  Unit,
 } from "../../../../../../const";
 import {
+  getUnitForm,
   getValueInRange,
   removeNonDigits,
 } from "../../../../../../utils/common";
@@ -60,8 +62,11 @@ const CreditDuration = () => {
   return (
     <fieldset className="credit-calculator__fieldset credit-duration">
       <label className="credit-calculator__label" htmlFor="duration">Срок кредитования</label>
-      <input className="credit-calculator__input credit-calculator__input--number" type="number" id="duration" name="duration"
-        value={duration} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} onChange={handleDurationChange} onBlur={handleDurationBlur} />
+      <div className="credit-calculator__number-input-wrapper">
+        <div className="credit-calculator__number-input-substrate">{`${duration} ${getUnitForm(duration, Unit.YEAR)}`}</div>
+        <input className="credit-calculator__input credit-calculator__input--number" type="number" id="duration" name="duration"
+          value={duration} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} onChange={handleDurationChange} onBlur={handleDurationBlur} />
+      </div>
       <input className="credit-parameters__range-input" type="range"
         min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} step={DURATION_CHANGE_STEP}
         value={duration} onChange={handleDurationRangeChange} />

@@ -17,6 +17,8 @@ import {
   StoreNameSpace,
 } from "../../../../../../const";
 import {
+  formatPrice,
+  getUnitForm,
   getValueInRange,
   removeNonDigits,
 } from "../../../../../../utils/common";
@@ -76,8 +78,11 @@ const CreditInitialFee = () => {
   return (
     <fieldset className="credit-calculator__fieldset credit-initial-fee">
       <label className="credit-calculator__label" htmlFor="initial-fee">Первоначальный взнос</label>
-      <input className="credit-calculator__input credit-calculator__input--number" type="number" id="initial-fee" name="initial-fee"
-        value={initialFee} min={minValue} max={maxValue} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
+      <div className="credit-calculator__number-input-wrapper">
+        <div className="credit-calculator__number-input-substrate">{`${formatPrice(initialFee)} ${getUnitForm(initialFee)}`}</div>
+        <input className="credit-calculator__input credit-calculator__input--number" type="number" id="initial-fee" name="initial-fee"
+          value={initialFee} min={minValue} max={maxValue} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
+      </div>
       <input className="credit-parameters__range-input" type="range"
         min={minValue} max={rangeMaxValue} step={stepValue} value={initialFee}
         onChange={handleInitialFeeRangeChange} />

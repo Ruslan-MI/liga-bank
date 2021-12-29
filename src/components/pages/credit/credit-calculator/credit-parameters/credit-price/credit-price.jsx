@@ -16,6 +16,7 @@ import {
 } from "../../../../../../const";
 import {
   formatPrice,
+  getUnitForm,
   getValueInRange,
   removeNonDigits,
 } from "../../../../../../utils/common";
@@ -71,11 +72,12 @@ const CreditPrice = () => {
   return (
     <fieldset className="credit-calculator__fieldset credit-price">
       <label className="credit-calculator__label" htmlFor="price">Стоимость {creditTypeTargetMap[creditType]}</label>
-      <div className="credit-price__input-wrapper">
+      <div className="credit-calculator__number-input-wrapper">
         <button className="credit-price__button credit-price__button--decrease" type="button"
           onClick={handleDecreasePriceClick}>
           <span className="visually-hidden">Уменьшить стоимость на {PRICE_CHANGE_STEP}</span>
         </button>
+        <div className="credit-calculator__number-input-substrate">{`${formatPrice(price)} ${getUnitForm(price)}`}</div>
         <input className="credit-calculator__input credit-calculator__input--number" type="number" id="price" name="price"
           value={price} min={PRICE_MIN_VALUE} max={PRICE_MAX_VALUE} onChange={handlePriceChange} onBlur={handlePriceBlur} />
         <button className="credit-price__button credit-price__button--increase" type="button"
