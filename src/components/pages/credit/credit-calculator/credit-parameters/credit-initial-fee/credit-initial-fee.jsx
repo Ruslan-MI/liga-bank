@@ -21,6 +21,7 @@ import {
   getUnitForm,
   getValueInRange,
   removeNonDigits,
+  checkBreakingInput,
 } from "../../../../../../utils/common";
 
 const CreditInitialFee = () => {
@@ -46,7 +47,7 @@ const CreditInitialFee = () => {
   const dispatch = useDispatch();
 
   const handleInitialFeeChange = (evt) => {
-    if (evt.nativeEvent.data === `.`) {
+    if (checkBreakingInput(evt)) {
       return;
     }
 
@@ -81,7 +82,7 @@ const CreditInitialFee = () => {
       <div className="credit-calculator__number-input-wrapper">
         <div className="credit-calculator__number-input-substrate">{`${formatPrice(initialFee)} ${getUnitForm(initialFee)}`}</div>
         <input className="credit-calculator__input credit-calculator__input--number" type="number" id="initial-fee" name="initial-fee"
-          value={initialFee} min={minValue} max={maxValue} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
+          value={initialFee.toString()} min={minValue} max={maxValue} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
       </div>
       <input className="credit-parameters__range-input" type="range"
         min={minValue} max={rangeMaxValue} step={stepValue} value={initialFee}

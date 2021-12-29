@@ -15,6 +15,7 @@ import {
   Unit,
 } from "../../../../../../const";
 import {
+  checkBreakingInput,
   getUnitForm,
   getValueInRange,
   removeNonDigits,
@@ -36,7 +37,7 @@ const CreditDuration = () => {
   const dispatch = useDispatch();
 
   const handleDurationChange = (evt) => {
-    if (evt.nativeEvent.data === `.`) {
+    if (checkBreakingInput(evt)) {
       return;
     }
 
@@ -65,7 +66,7 @@ const CreditDuration = () => {
       <div className="credit-calculator__number-input-wrapper">
         <div className="credit-calculator__number-input-substrate">{`${duration} ${getUnitForm(duration, Unit.YEAR)}`}</div>
         <input className="credit-calculator__input credit-calculator__input--number" type="number" id="duration" name="duration"
-          value={duration} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} onChange={handleDurationChange} onBlur={handleDurationBlur} />
+          value={duration.toString()} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} onChange={handleDurationChange} onBlur={handleDurationBlur} />
       </div>
       <input className="credit-parameters__range-input" type="range"
         min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} step={DURATION_CHANGE_STEP}

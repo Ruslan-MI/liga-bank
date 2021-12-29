@@ -19,6 +19,7 @@ import {
   getUnitForm,
   getValueInRange,
   removeNonDigits,
+  checkBreakingInput,
 } from "../../../../../../utils/common";
 
 const CreditPrice = () => {
@@ -38,7 +39,7 @@ const CreditPrice = () => {
   const dispatch = useDispatch();
 
   const handlePriceChange = (evt) => {
-    if (evt.nativeEvent.data === `.`) {
+    if (checkBreakingInput(evt)) {
       return;
     }
 
@@ -79,7 +80,7 @@ const CreditPrice = () => {
         </button>
         <div className="credit-calculator__number-input-substrate">{`${formatPrice(price)} ${getUnitForm(price)}`}</div>
         <input className="credit-calculator__input credit-calculator__input--number" type="number" id="price" name="price"
-          value={price} min={PRICE_MIN_VALUE} max={PRICE_MAX_VALUE} onChange={handlePriceChange} onBlur={handlePriceBlur} />
+          value={price.toString()} min={PRICE_MIN_VALUE} max={PRICE_MAX_VALUE} onChange={handlePriceChange} onBlur={handlePriceBlur} />
         <button className="credit-price__button credit-price__button--increase" type="button"
           onClick={handleIncreasePriceClick}>
           <span className="visually-hidden">Увеличить стоимость на {PRICE_CHANGE_STEP}</span>

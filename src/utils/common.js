@@ -91,3 +91,20 @@ export const getUnitForm = (value, unit = Unit.RUBLE) => {
 
   return first.title[unit];
 };
+
+export const checkBreakingInput = (evt) => {
+  const {
+    target: {
+      value,
+    },
+    nativeEvent: {
+      inputType,
+    },
+  } = evt;
+
+  if (inputType === `insertText` && value === ``) {
+    return true;
+  }
+
+  return false;
+};
