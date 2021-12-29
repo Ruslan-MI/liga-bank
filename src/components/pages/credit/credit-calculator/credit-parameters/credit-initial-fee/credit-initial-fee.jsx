@@ -11,7 +11,7 @@ import {
 } from "../../../../../../store/actions/calculator";
 import {
   getCreditParameters,
-  getInitialFeeValues,
+  getInitialFeeRangeValues,
 } from "../../../../../../store/selectors";
 import {
   StoreNameSpace,
@@ -31,17 +31,16 @@ const CreditInitialFee = () => {
     creditParameters: {
       INITIAL_FEE_MIN_PART,
     },
-    initialFeeValues: {
+    initialFeeRangeValues: {
       min: minValue,
       max: maxValue,
-      rangeMax: rangeMaxValue,
       step: stepValue,
       current: currentValue,
     },
   } = useSelector((globalState) => ({
     ...globalState[StoreNameSpace.CALCULATOR],
     ...getCreditParameters(globalState),
-    ...getInitialFeeValues(globalState),
+    ...getInitialFeeRangeValues(globalState),
   }));
 
   const dispatch = useDispatch();
@@ -61,7 +60,7 @@ const CreditInitialFee = () => {
   };
 
   const handleInitialFeeBlur = () => {
-    const value = getValueInRange(initialFee, minValue, maxValue);
+    const value = getValueInRange(initialFee, minValue, price);
 
     dispatch(initialFeeChange(value));
   };
@@ -85,7 +84,7 @@ const CreditInitialFee = () => {
           value={initialFee.toString()} min={minValue} max={maxValue} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
       </div>
       <input className="credit-parameters__range-input" type="range"
-        min={minValue} max={rangeMaxValue} step={stepValue} value={initialFee}
+        min={minValue} max={maxValue} step={stepValue} value={initialFee}
         onChange={handleInitialFeeRangeChange} />
       <p className="credit-calculator__description">
         {currentValue}%

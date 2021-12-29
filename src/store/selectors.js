@@ -81,7 +81,7 @@ const getCreditRate = createSelector([
   };
 });
 
-export const getInitialFeeValues = createSelector([
+export const getInitialFeeRangeValues = createSelector([
   getCreditParameters,
   getPrice,
   getInitialFee,
@@ -94,19 +94,20 @@ export const getInitialFeeValues = createSelector([
     MATERNAL_CAPITAL_VALUE,
   } = creditParameters.creditParameters;
 
-  const max = (price - CREDIT_MIN_VALUE
+  const initialFeeRange = (price - CREDIT_MIN_VALUE
     - (isMaternalCapital ? MATERNAL_CAPITAL_VALUE : 0));
-  const min = max > 0 ? price * INITIAL_FEE_MIN_PART : 0;
+  const min = initialFeeRange > 0 ?
+    price * INITIAL_FEE_MIN_PART : 0;
   const step = price * INITIAL_FEE_CHANGE_STEP;
-  const rangeMax = max > 0 ? max - (max % step) : 0;
-  const current = max > 0 ?
+  const max = initialFeeRange > 0 ?
+    initialFeeRange - (initialFeeRange % step) : 0;
+  const current = initialFeeRange > 0 ?
     Math.floor(initialFee / price * PERCENTAGE_IN_FULL) : 0;
 
   return {
-    initialFeeValues: {
+    initialFeeRangeValues: {
       min,
       max,
-      rangeMax,
       step,
       current,
     },
