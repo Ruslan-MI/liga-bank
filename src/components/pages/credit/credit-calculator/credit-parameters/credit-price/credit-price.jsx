@@ -37,6 +37,10 @@ const CreditPrice = () => {
   const dispatch = useDispatch();
 
   const handlePriceChange = (evt) => {
+    if (evt.nativeEvent.data === `.`) {
+      return;
+    }
+
     const value = removeNonDigits(evt.target.value);
 
     if (value.length > `${PRICE_MAX_VALUE}`.length) {
@@ -65,22 +69,22 @@ const CreditPrice = () => {
   };
 
   return (
-    <fieldset className="credit-calculator__price credit-price">
+    <fieldset className="credit-calculator__fieldset credit-price">
       <label className="credit-calculator__label" htmlFor="price">Стоимость {creditTypeTargetMap[creditType]}</label>
-      <div className="credit-calculator__price-input-wrapper">
-        <button className="credit-calculator__change-price-button credit-calculator__change-price-button--decrease" type="button"
+      <div className="credit-price__input-wrapper">
+        <button className="credit-price__button credit-price__button--decrease" type="button"
           onClick={handleDecreasePriceClick}>
-          <span>Уменьшить стоимость на {PRICE_CHANGE_STEP}</span>
+          <span className="visually-hidden">Уменьшить стоимость на {PRICE_CHANGE_STEP}</span>
         </button>
-        <input className="credit-calculator__input" type="text" id="price" name="price"
-          value={price} onChange={handlePriceChange} onBlur={handlePriceBlur} />
-        <button className="credit-calculator__change-price-button credit-calculator__change-price-button--increase" type="button"
+        <input className="credit-calculator__input credit-calculator__input--number" type="number" id="price" name="price"
+          value={price} min={PRICE_MIN_VALUE} max={PRICE_MAX_VALUE} onChange={handlePriceChange} onBlur={handlePriceBlur} />
+        <button className="credit-price__button credit-price__button--increase" type="button"
           onClick={handleIncreasePriceClick}>
-          <span>Увеличить стоимость на {PRICE_CHANGE_STEP}</span>
+          <span className="visually-hidden">Увеличить стоимость на {PRICE_CHANGE_STEP}</span>
         </button>
       </div>
       <p className="credit-calculator__description">
-        От {formatPrice(PRICE_MIN_VALUE)} до {formatPrice(PRICE_MAX_VALUE)} рублей
+        От {formatPrice(PRICE_MIN_VALUE)}  до {formatPrice(PRICE_MAX_VALUE)} рублей
       </p>
     </fieldset>
   );

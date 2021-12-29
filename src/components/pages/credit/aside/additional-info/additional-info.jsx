@@ -81,7 +81,7 @@ const AdditionalInfo = ({
                   </svg>
                 </h3>
                 <p className={`additional-info__slogan additional-info__slogan--${name}`}>{slogan}</p>
-                {link && <a className={`additional-info__link additional-info__link--${name}`} href={link.href}>{link.title}</a>}
+                {link && <a className={`additional-info__link additional-info__link--${name} blue-button`} href={link.href}>{link.title}</a>}
                 {images &&
                   <div className="additional-info__image-wrapper">
                     {images.map(({

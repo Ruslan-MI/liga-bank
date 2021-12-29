@@ -99,7 +99,7 @@ const Services = ({
                     <li className="services__description-item" key={item}>{item}</li>
                   ))}
                 </ul>
-                {link && <a className={`services__link services__link--${name}`} href={link.href}>{link.title}</a>}
+                {link && <a className={`services__link services__link--${name} blue-button`} href={link.href}>{link.title}</a>}
                 {offer && <p className="services__offer" dangerouslySetInnerHTML={offer} />}
               </div>
             </article>

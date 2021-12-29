@@ -1,0 +1,21 @@
+.totals-list {
+  margin: 0;
+}
+
+.totals-list__item {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.totals-list__parameter {
+  font-size: 16px;
+  font-weight: 400;
+  color: $label-text;
+  margin-top: 2px;
+}
+
+.totals-list__value {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}

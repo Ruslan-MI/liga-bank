@@ -20,7 +20,7 @@ const CreditCalculator = () => {
   }));
 
   return (
-    <section className="main__credit-calculator credit-calculator">
+    <section className="main__credit-calculator credit-calculator wrapper">
       <h2 className="credit-calculator__heading">Кредитный калькулятор</h2>
       <CreditParameters />
       {creditType && <CreditResult />}

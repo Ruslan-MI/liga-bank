@@ -34,6 +34,10 @@ const CreditDuration = () => {
   const dispatch = useDispatch();
 
   const handleDurationChange = (evt) => {
+    if (evt.nativeEvent.data === `.`) {
+      return;
+    }
+
     const value = removeNonDigits(evt.target.value);
 
     if (value.length > `${DURATION_MAX_VALUE}`.length) {
@@ -54,14 +58,14 @@ const CreditDuration = () => {
   };
 
   return (
-    <fieldset className="credit-calculator__duration credit-duration">
+    <fieldset className="credit-calculator__fieldset credit-duration">
       <label className="credit-calculator__label" htmlFor="duration">Срок кредитования</label>
-      <input className="credit-calculator__input" type="text" id="duration" name="duration"
-        value={duration} onChange={handleDurationChange} onBlur={handleDurationBlur} />
-      <input className="credit-calculator__range-input" type="range"
+      <input className="credit-calculator__input credit-calculator__input--number" type="number" id="duration" name="duration"
+        value={duration} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} onChange={handleDurationChange} onBlur={handleDurationBlur} />
+      <input className="credit-parameters__range-input" type="range"
         min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} step={DURATION_CHANGE_STEP}
         value={duration} onChange={handleDurationRangeChange} />
-      <p className="credit-calculator__description">
+      <p className="credit-calculator__description credit-calculator__description--duration">
         <span>{DURATION_MIN_VALUE} лет</span>
         <span>{DURATION_MAX_VALUE} лет</span>
       </p>

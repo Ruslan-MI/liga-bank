@@ -24,7 +24,7 @@ const CreditResult = () => {
   return (
     <div className="credit-calculator__result credit-result">
       {creditResults.creditValue < CREDIT_MIN_VALUE ?
-        <CreditWarning value={CREDIT_MIN_VALUE} /> :
+        <CreditWarning /> :
         <CreditOffer results={creditResults} />}
     </div>
   );

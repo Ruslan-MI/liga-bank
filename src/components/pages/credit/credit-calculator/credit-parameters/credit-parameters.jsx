@@ -57,7 +57,7 @@ const CreditParameters = () => {
   };
 
   const handleTypesListClick = (evt) => {
-    if (evt.target.matches(`.credit-calculator__types-button`)) {
+    if (evt.target.matches(`.credit-parameters__types-button`)) {
       dispatch(creditTypeChange(evt.target.dataset.value));
       dispatch(hideRequestForm());
 
@@ -73,15 +73,16 @@ const CreditParameters = () => {
       action="https://echo.htmlacademy.ru" method="POST" onSubmit={handleFormSubmit} onChange={handleFormChange}>
       <section className="credit-calculator__step">
         <h3 className="credit-calculator__step-heading">Шаг 1. Цель кредита</h3>
-        <div className="credit-calculator__credit-types-wrapper">
-          <button className="credit-calculator__show-types-list-button" type="button" onClick={handleShowTypesListButtonClick}>
+        <div className="credit-parameters__credit-types-wrapper">
+          <button className={`credit-parameters__types-button credit-parameters__types-button--show-types-list ${state.isTypesListOpened ?
+            `credit-parameters__types-button--list-opened` : ``}`} type="button" onClick={handleShowTypesListButtonClick}>
             {creditType ? CreditParameter[creditType].CREDIT_TITLE : `Выберите цель кредита`}
           </button>
           {state.isTypesListOpened &&
-            <ul className="credit-calculator__types-list" onClick={handleTypesListClick}>
+            <ul className="credit-parameters__types-list" onClick={handleTypesListClick}>
               {Object.values(CreditType).map((item) => item !== creditType &&
-                <li className="credit-calculator__types-item" key={item}>
-                  <button className="credit-calculator__types-button" type="button" data-value={item}>{CreditParameter[item].CREDIT_TITLE}</button>
+                <li className="credit-parameters__types-item" key={item}>
+                  <button className="credit-parameters__types-button" type="button" data-value={item}>{CreditParameter[item].CREDIT_TITLE}</button>
                 </li>)}
             </ul>}
         </div>

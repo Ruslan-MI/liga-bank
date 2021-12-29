@@ -39,24 +39,26 @@ const CreditOptions = () => {
   };
 
   return (
-    <fieldset className="credit-calculator__options credit-options" onChange={handleCreditOptionsChange}>
-      {creditType === CreditType.MORTGAGE &&
-        <p className="credit-calculator__maternal-capital">
-          <input className="credit-calculator__checkbox-input" type="checkbox" id="maternal-capital" name="maternal-capital"
-            data-name="isMaternalCapital" defaultChecked={isMaternalCapital} />
-          <label className="credit-calculator__label" htmlFor="maternal-capital">Использовать материнский капитал</label>
-        </p>}
-      {creditType === CreditType.CAR && <>
-        <p className="credit-calculator__casco">
-          <input className="credit-calculator__checkbox-input" type="checkbox" id="casco" name="casco"
-            data-name="isCasco" defaultChecked={isCasco} />
-          <label className="credit-calculator__label" htmlFor="casco">Оформить КАСКО в нашем банке</label>
-        </p>
-        <p className="credit-calculator__life-insurance">
-          <input className="credit-calculator__checkbox-input" type="checkbox" id="life-insurance" name="life-insurance"
-            data-name="isLifeInsurance" defaultChecked={isLifeInsurance} />
-          <label className="credit-calculator__label" htmlFor="life-insurance">Оформить Страхование жизни в нашем банке</label>
-        </p></>}
+    <fieldset className="credit-calculator__fieldset credit-options" onChange={handleCreditOptionsChange}>
+      <ul className="credit-options__list">
+        {creditType === CreditType.MORTGAGE &&
+          <li className="credit-options__item">
+            <input className="credit-options__input" type="checkbox" id="maternal-capital" name="maternal-capital"
+              data-name="isMaternalCapital" defaultChecked={isMaternalCapital} />
+            <label className="credit-options__label" htmlFor="maternal-capital">Использовать материнский капитал</label>
+          </li>}
+        {creditType === CreditType.CAR && <>
+          <li className="credit-options__item">
+            <input className="credit-options__input" type="checkbox" id="casco" name="casco"
+              data-name="isCasco" defaultChecked={isCasco} />
+            <label className="credit-options__label" htmlFor="casco">Оформить КАСКО в нашем банке</label>
+          </li>
+          <li className="credit-options__item">
+            <input className="credit-options__input" type="checkbox" id="life-insurance" name="life-insurance"
+              data-name="isLifeInsurance" defaultChecked={isLifeInsurance} />
+            <label className="credit-options__label" htmlFor="life-insurance">Оформить страхование жизни в нашем банке</label>
+          </li></>}
+      </ul>
     </fieldset>
   );
 };

@@ -17,7 +17,7 @@ import {
   formatPhoneNumber,
 } from "../../../../../../utils/phone";
 
-const CreditUserData = () => {
+const CreditRequestForm = () => {
   const {
     name: userName,
     phone,
@@ -79,26 +79,26 @@ const CreditUserData = () => {
   };
 
   return (
-    <form className="credit-calculator__request-form credit-user-data" id="credit-user-data-form" action="https://echo.htmlacademy.ru"
+    <form className="credit-request__form credit-request-form" id="credit-request-form" action="https://echo.htmlacademy.ru"
       method="POST" onSubmit={handleFormSubmit}>
-      <p className="credit-calculator__name">
+      <p className="credit-request-form__paragraph">
         <label className="visually-hidden" htmlFor="name">Фамилия, имя, отчество</label>
-        <input className="credit-calculator__input" type="text" name="name" id="name" placeholder="ФИО"
+        <input className="credit-request-form__input credit-calculator__input" type="text" name="name" id="name" placeholder="ФИО"
           pattern="[A-Za-zА-Яа-яЁё][-─–—A-Za-zА-Яа-яЁё\s]{0,}" required autoFocus value={userName} onChange={handleNameChange} />
       </p>
-      <p className="credit-calculator__phone">
+      <p className="credit-request-form__paragraph">
         <label className="visually-hidden" htmlFor="phone">Телефон</label>
-        <input className="credit-calculator__input" type="tel" name="phone" id="phone" placeholder="Телефон" required
+        <input className="credit-request-form__input credit-calculator__input" type="tel" name="phone" id="phone" placeholder="Телефон" required
           value={phone} onChange={handlePhoneChange} />
       </p>
-      <p className="credit-calculator__phone">
+      <p className="credit-request-form__paragraph">
         <label className="visually-hidden" htmlFor="phone">E-mail</label>
-        <input className="credit-calculator__input" type="email" name="email" id="email" placeholder="E-mail" required
+        <input className="credit-request-form__input credit-calculator__input" type="email" name="email" id="email" placeholder="E-mail" required
           value={email} onChange={handleEmailChange} />
       </p>
-      <button className="credit-calculator__request-submit-button" type="submit">Отправить</button>
+      <button className="credit-request-form__submit-button blue-button" type="submit">Отправить</button>
     </form>
   );
 };
 
-export default CreditUserData;
+export default CreditRequestForm;

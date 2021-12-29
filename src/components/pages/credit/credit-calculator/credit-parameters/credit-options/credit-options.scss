@@ -1,0 +1,38 @@
+.credit-options__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credit-options__item {
+  padding: 7px 0;
+}
+
+.credit-options__input {
+  appearance: none;
+}
+
+.credit-options__label {
+  font-size: 14px;
+  padding-left: 24px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $link-background;
+    border-radius: 2px;
+  }
+}
+
+.credit-options__input:checked + .credit-options__label::before {
+  background-color: $link-background;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 2.143 3.5 5 7 1' stroke='%23F6F7FF'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+}

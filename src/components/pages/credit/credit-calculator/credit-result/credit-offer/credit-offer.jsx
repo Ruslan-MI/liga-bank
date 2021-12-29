@@ -28,27 +28,27 @@ const CreditOffer = ({
   }));
 
   return (
-    <section className="credit-calculator__result-offer credit-offer">
-      <h3 className="credit-calculator__result-heading">Наше предложение</h3>
-      <dl className="credit-calculator__result-list">
-        <div className="credit-calculator__result-item">
-          <dt className="credit-calculator__result-term">Сумма {creditTypeCyrillicMap[creditType][1]}</dt>
-          <dd className="credit-calculator__result-definition">{formatPrice(creditValue)} {getUnitForm(creditValue)}</dd>
+    <section className="credit-result__offer credit-offer message">
+      <h3 className="credit-offer__heading message__heading">Наше предложение</h3>
+      <dl className="credit-offer__totals-list totals-list">
+        <div className="credit-offer__totals-item totals-list__item">
+          <dt className="credit-offer__totals-parameter totals-list__parameter">Сумма {creditTypeCyrillicMap[creditType][1]}</dt>
+          <dd className="credit-offer__totals-value totals-list__value">{formatPrice(creditValue)} {getUnitForm(creditValue)}</dd>
         </div>
-        <div className="credit-calculator__result-item">
-          <dt className="credit-calculator__result-term">Процентная ставка</dt>
-          <dd className="credit-calculator__result-definition">{rate}%</dd>
+        <div className="credit-offer__totals-item totals-list__item">
+          <dt className="credit-offer__totals-parameter totals-list__parameter">Процентная ставка</dt>
+          <dd className="credit-offer__totals-value totals-list__value">{rate}%</dd>
         </div>
-        <div className="credit-calculator__result-item">
-          <dt className="credit-calculator__result-term">Ежемесячный платеж</dt>
-          <dd className="credit-calculator__result-definition">{formatPrice(monthlyPayment)} {getUnitForm(monthlyPayment)}</dd>
+        <div className="credit-offer__totals-item totals-list__item">
+          <dt className="credit-offer__totals-parameter totals-list__parameter">Ежемесячный платеж</dt>
+          <dd className="credit-offer__totals-value totals-list__value">{formatPrice(monthlyPayment)} {getUnitForm(monthlyPayment)}</dd>
         </div>
-        <div className="credit-calculator__result-item">
-          <dt className="credit-calculator__result-term">Необходимый доход</dt>
-          <dd className="credit-calculator__result-definition">{formatPrice(minSalary)} {getUnitForm(minSalary)}</dd>
+        <div className="credit-offer__totals-item totals-list__item">
+          <dt className="credit-offer__totals-parameter totals-list__parameter">Необходимый доход</dt>
+          <dd className="credit-offer__totals-value totals-list__value">{formatPrice(minSalary)} {getUnitForm(minSalary)}</dd>
         </div>
       </dl>
-      <button className="credit-calculator__result-submit-button" type="submit" form="credit-parameters-form">Оформить заявку</button>
+      <button className="credit-offer__submit-button blue-button" type="submit" form="credit-parameters-form">Оформить заявку</button>
     </section>
   );
 };

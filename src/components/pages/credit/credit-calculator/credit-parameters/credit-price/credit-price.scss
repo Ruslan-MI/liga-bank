@@ -1,0 +1,25 @@
+.credit-price__input-wrapper {
+  position: relative;
+}
+
+.credit-price__button {
+  position: absolute;
+  top: 0;
+  width: 46px;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &--decrease {
+    left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231F1E25' stroke-width='2' d='M0 1h16'/%3E%3C/svg%3E");
+  }
+
+  &--increase {
+    right: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8h16M8 0v16' stroke='%231F1E25' stroke-width='2'/%3E%3C/svg%3E");
+  }
+}

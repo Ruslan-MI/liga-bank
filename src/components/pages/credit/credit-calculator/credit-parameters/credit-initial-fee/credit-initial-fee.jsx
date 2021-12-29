@@ -11,7 +11,7 @@ import {
 } from "../../../../../../store/actions/calculator";
 import {
   getCreditParameters,
-  getInitialFeeRangeValues,
+  getInitialFeeValues,
 } from "../../../../../../store/selectors";
 import {
   StoreNameSpace,
@@ -28,21 +28,26 @@ const CreditInitialFee = () => {
     creditParameters: {
       INITIAL_FEE_MIN_PART,
     },
-    initialFeeRangeValues: {
+    initialFeeValues: {
       min: minValue,
       max: maxValue,
+      rangeMax: rangeMaxValue,
       step: stepValue,
       current: currentValue,
     },
   } = useSelector((globalState) => ({
     ...globalState[StoreNameSpace.CALCULATOR],
     ...getCreditParameters(globalState),
-    ...getInitialFeeRangeValues(globalState),
+    ...getInitialFeeValues(globalState),
   }));
 
   const dispatch = useDispatch();
 
   const handleInitialFeeChange = (evt) => {
+    if (evt.nativeEvent.data === `.`) {
+      return;
+    }
+
     const value = removeNonDigits(evt.target.value);
 
     if (value.length > `${price}`.length) {
@@ -69,12 +74,12 @@ const CreditInitialFee = () => {
   ]);
 
   return (
-    <fieldset className="credit-calculator__initial-fee credit-initial-fee">
+    <fieldset className="credit-calculator__fieldset credit-initial-fee">
       <label className="credit-calculator__label" htmlFor="initial-fee">Первоначальный взнос</label>
-      <input className="credit-calculator__input" type="text" id="initial-fee" name="initial-fee"
-        value={initialFee} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
-      <input className="credit-calculator__range-input" type="range"
-        min={minValue} max={maxValue} step={stepValue} value={initialFee}
+      <input className="credit-calculator__input credit-calculator__input--number" type="number" id="initial-fee" name="initial-fee"
+        value={initialFee} min={minValue} max={maxValue} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
+      <input className="credit-parameters__range-input" type="range"
+        min={minValue} max={rangeMaxValue} step={stepValue} value={initialFee}
         onChange={handleInitialFeeRangeChange} />
       <p className="credit-calculator__description">
         {currentValue}%

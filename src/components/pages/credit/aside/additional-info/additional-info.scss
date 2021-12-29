@@ -72,17 +72,10 @@
 }
 
 .additional-info__link {
-  color: $header-background;
-  font-size: 14px;
-  font-weight: 500;
-  display: block;
   margin-top: 26px;
-  background-color: $link-background;
   padding: 14px;
   padding-bottom: 13px;
   width: 188px;
-  text-align: center;
-  border-radius: 4px;
 
   &--credit {
     color: inherit;

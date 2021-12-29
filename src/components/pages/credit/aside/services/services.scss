@@ -101,7 +101,6 @@
 
   &::before {
     content: "";
-    display: block;
     width: 10px;
     height: 8px;
     position: absolute;
@@ -115,16 +114,8 @@
 }
 
 .services__link {
-  color: $header-background;
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: 500;
-  display: block;
   margin-top: 12px;
-  background-color: $link-background;
   padding: 15px 10px 12px 8px;
-  text-align: center;
-  border-radius: 4px;
 
   &--insurance {
     margin-top: 13px;
