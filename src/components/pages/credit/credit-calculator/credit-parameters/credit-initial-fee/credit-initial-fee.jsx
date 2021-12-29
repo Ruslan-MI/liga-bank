@@ -1,4 +1,5 @@
 import React, {
+  useRef,
   useEffect,
 } from "react";
 import {
@@ -22,6 +23,7 @@ import {
   getValueInRange,
   removeNonDigits,
   checkBreakingInput,
+  checkInvalidity,
 } from "../../../../../../utils/common";
 
 const CreditInitialFee = () => {
@@ -42,6 +44,8 @@ const CreditInitialFee = () => {
     ...getCreditParameters(globalState),
     ...getInitialFeeRangeValues(globalState),
   }));
+
+  const initialFeeInputRef = useRef();
 
   const dispatch = useDispatch();
 
@@ -75,13 +79,22 @@ const CreditInitialFee = () => {
     price,
   ]);
 
+  useEffect(() => {
+    checkInvalidity([
+      initialFeeInputRef.current,
+    ]);
+  }, [
+    initialFee,
+  ]);
+
   return (
     <fieldset className="credit-calculator__fieldset credit-initial-fee">
       <label className="credit-calculator__label" htmlFor="initial-fee">Первоначальный взнос</label>
       <div className="credit-calculator__number-input-wrapper">
         <div className="credit-calculator__number-input-substrate">{`${formatPrice(initialFee)} ${getUnitForm(initialFee)}`}</div>
         <input className="credit-calculator__input credit-calculator__input--number" type="number" id="initial-fee" name="initial-fee"
-          value={initialFee.toString()} min={minValue} max={maxValue} onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
+          required value={initialFee.toString()} min={minValue} max={price} ref={initialFeeInputRef}
+          onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
       </div>
       <input className="credit-parameters__range-input" type="range"
         min={minValue} max={maxValue} step={stepValue} value={initialFee}

@@ -1,4 +1,7 @@
-import React from "react";
+import React, {
+  useRef,
+  useEffect,
+} from "react";
 import {
   useSelector,
   useDispatch,
@@ -19,6 +22,7 @@ import {
   getUnitForm,
   getValueInRange,
   removeNonDigits,
+  checkInvalidity,
 } from "../../../../../../utils/common";
 
 const CreditDuration = () => {
@@ -33,6 +37,8 @@ const CreditDuration = () => {
     ...globalState[StoreNameSpace.CALCULATOR],
     ...getCreditParameters(globalState),
   }));
+
+  const durationInputRef = useRef();
 
   const dispatch = useDispatch();
 
@@ -60,13 +66,22 @@ const CreditDuration = () => {
     dispatch(durationChange(Number(evt.target.value)));
   };
 
+  useEffect(() => {
+    checkInvalidity([
+      durationInputRef.current,
+    ]);
+  }, [
+    duration,
+  ]);
+
   return (
     <fieldset className="credit-calculator__fieldset credit-duration">
       <label className="credit-calculator__label" htmlFor="duration">Срок кредитования</label>
       <div className="credit-calculator__number-input-wrapper">
         <div className="credit-calculator__number-input-substrate">{`${duration} ${getUnitForm(duration, Unit.YEAR)}`}</div>
         <input className="credit-calculator__input credit-calculator__input--number" type="number" id="duration" name="duration"
-          value={duration.toString()} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} onChange={handleDurationChange} onBlur={handleDurationBlur} />
+          required value={duration.toString()} ref={durationInputRef} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE}
+          onChange={handleDurationChange} onBlur={handleDurationBlur} />
       </div>
       <input className="credit-parameters__range-input" type="range"
         min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE} step={DURATION_CHANGE_STEP}

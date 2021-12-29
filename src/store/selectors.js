@@ -97,8 +97,8 @@ export const getInitialFeeRangeValues = createSelector([
   const initialFeeRange = (price - CREDIT_MIN_VALUE
     - (isMaternalCapital ? MATERNAL_CAPITAL_VALUE : 0));
   const min = initialFeeRange > 0 ?
-    price * INITIAL_FEE_MIN_PART : 0;
-  const step = price * INITIAL_FEE_CHANGE_STEP;
+    Math.ceil(price * INITIAL_FEE_MIN_PART) : 0;
+  const step = Math.ceil(price * INITIAL_FEE_CHANGE_STEP);
   const max = initialFeeRange > 0 ?
     initialFeeRange - (initialFeeRange % step) : 0;
   const current = initialFeeRange > 0 ?

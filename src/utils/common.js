@@ -108,3 +108,30 @@ export const checkBreakingInput = (evt) => {
 
   return false;
 };
+
+export const checkInvalidity = (inputs) => inputs.map((input) => {
+  const validity = input.validity;
+  const classList = input.parentElement.classList;
+
+  if (validity.valueMissing) {
+    classList.add(`credit-calculator__invalidity--value-missing`);
+  } else {
+    classList.remove(`credit-calculator__invalidity--value-missing`);
+  }
+
+  if (validity.rangeUnderflow || validity.rangeOverflow || validity.typeMismatch || validity.patternMismatch) {
+    classList.add(`credit-calculator__invalidity--incorrect-value`);
+  } else {
+    classList.remove(`credit-calculator__invalidity--incorrect-value`);
+  }
+
+  if (validity.valid) {
+    classList.remove(`credit-calculator__invalidity`);
+
+    return true;
+  }
+
+  classList.add(`credit-calculator__invalidity`);
+
+  return false;
+}).includes(false);

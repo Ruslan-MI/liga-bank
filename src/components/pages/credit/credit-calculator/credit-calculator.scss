@@ -71,6 +71,30 @@
   }
 }
 
+.credit-calculator__invalidity {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    color: $error-message;
+    font-size: 16px;
+  }
+
+  &--value-missing::after {
+    content: "Заполните поле";
+  }
+
+  &--incorrect-value::after {
+    content: "Некорректное значение";
+  }
+}
+
+.credit-calculator__invalidity .credit-calculator__input {
+  border-color: $error-message;
+}
+
 .credit-calculator__description {
   margin: 0;
   margin-top: 6px;

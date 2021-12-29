@@ -1,4 +1,7 @@
-import React from "react";
+import React, {
+  useRef,
+  useEffect,
+} from "react";
 import {
   useSelector,
   useDispatch,
@@ -20,6 +23,7 @@ import {
   getValueInRange,
   removeNonDigits,
   checkBreakingInput,
+  checkInvalidity,
 } from "../../../../../../utils/common";
 
 const CreditPrice = () => {
@@ -35,6 +39,8 @@ const CreditPrice = () => {
     ...globalState[StoreNameSpace.CALCULATOR],
     ...getCreditParameters(globalState),
   }));
+
+  const priceInputRef = useRef();
 
   const dispatch = useDispatch();
 
@@ -70,6 +76,14 @@ const CreditPrice = () => {
     dispatch(priceChange(value));
   };
 
+  useEffect(() => {
+    checkInvalidity([
+      priceInputRef.current,
+    ]);
+  }, [
+    price,
+  ]);
+
   return (
     <fieldset className="credit-calculator__fieldset credit-price">
       <label className="credit-calculator__label" htmlFor="price">Стоимость {creditTypeTargetMap[creditType]}</label>
@@ -80,7 +94,8 @@ const CreditPrice = () => {
         </button>
         <div className="credit-calculator__number-input-substrate">{`${formatPrice(price)} ${getUnitForm(price)}`}</div>
         <input className="credit-calculator__input credit-calculator__input--number" type="number" id="price" name="price"
-          value={price.toString()} min={PRICE_MIN_VALUE} max={PRICE_MAX_VALUE} onChange={handlePriceChange} onBlur={handlePriceBlur} />
+          required value={price.toString()} min={PRICE_MIN_VALUE} max={PRICE_MAX_VALUE} ref={priceInputRef}
+          onChange={handlePriceChange} onBlur={handlePriceBlur} />
         <button className="credit-price__button credit-price__button--increase" type="button"
           onClick={handleIncreasePriceClick}>
           <span className="visually-hidden">Увеличить стоимость на {PRICE_CHANGE_STEP}</span>
