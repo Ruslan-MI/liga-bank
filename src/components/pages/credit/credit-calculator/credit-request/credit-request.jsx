@@ -38,7 +38,7 @@ const CreditRequest = () => {
         </div>
         <div className="credit-request__totals-item totals-list__item">
           <dt className="credit-request__totals-parameter totals-list__parameter">Цель кредита</dt>
-          <dd className="credit-request__totals-value totals-list__value">{creditTypeCyrillicMap[creditType][0]}</dd>
+          <dd className="credit-request__totals-value credit-request__totals-value--credit-type totals-list__value">{creditTypeCyrillicMap[creditType][0]}</dd>
         </div>
         <div className="credit-request__totals-item totals-list__item">
           <dt className="credit-request__totals-parameter totals-list__parameter">Стоимость {creditTypeTargetMap[creditType]}</dt>

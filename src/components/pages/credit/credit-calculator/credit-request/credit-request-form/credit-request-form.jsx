@@ -22,6 +22,10 @@ import {
 import {
   checkInvalidity,
 } from "../../../../../../utils/common";
+import {
+  hideRequestForm,
+  showGratitudeModal,
+} from "../../../../../../store/actions/page";
 
 const CreditRequestForm = () => {
   const {
@@ -86,6 +90,8 @@ const CreditRequestForm = () => {
     evt.preventDefault();
 
     dispatch(requestNumberIncrease());
+    dispatch(hideRequestForm());
+    dispatch(showGratitudeModal());
   };
 
   const handleSubmitButtonClick = (evt) =>

@@ -14,3 +14,9 @@
   padding: 16px 0 12px;
   border-bottom: 1px solid $totals-border;
 }
+
+.credit-request__totals-value {
+  &--credit-type {
+    text-transform: capitalize;
+  }
+}
