@@ -7,22 +7,22 @@ import {
 } from "../../const";
 
 const ActionType = {
-  NAME_CHANGE: `${StoreNameSpace.USER}/nameChange`,
-  PHONE_CHANGE: `${StoreNameSpace.USER}/phoneChange`,
-  EMAIL_CHANGE: `${StoreNameSpace.USER}/emailChange`,
-  REQUEST_NUMBER_INCREASE: `${StoreNameSpace.USER}/requestNumberIncrease`,
+  CHANGE_NAME: `${StoreNameSpace.USER}/changeName`,
+  CHANGE_PHONE: `${StoreNameSpace.USER}/changePhone`,
+  CHANGE_EMAIL: `${StoreNameSpace.USER}/changeEmail`,
+  INCREASE_REQUEST_NUMBER: `${StoreNameSpace.USER}/increaseRequestNumber`,
 };
 
-export const nameChange = createAction(ActionType.NAME_CHANGE, (name) => ({
+export const changeName = createAction(ActionType.CHANGE_NAME, (name) => ({
   payload: name,
 }));
 
-export const phoneChange = createAction(ActionType.PHONE_CHANGE, (phone) => ({
+export const changePhone = createAction(ActionType.CHANGE_PHONE, (phone) => ({
   payload: phone,
 }));
 
-export const emailChange = createAction(ActionType.EMAIL_CHANGE, (email) => ({
+export const changeEmail = createAction(ActionType.CHANGE_EMAIL, (email) => ({
   payload: email,
 }));
 
-export const requestNumberIncrease = createAction(ActionType.REQUEST_NUMBER_INCREASE);
+export const increaseRequestNumber = createAction(ActionType.INCREASE_REQUEST_NUMBER);

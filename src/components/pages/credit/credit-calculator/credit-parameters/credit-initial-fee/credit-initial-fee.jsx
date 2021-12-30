@@ -8,7 +8,7 @@ import {
 } from "react-redux";
 
 import {
-  initialFeeChange,
+  changeInitialFee,
 } from "../../../../../../store/actions/calculator";
 import {
   getCreditParameters,
@@ -60,21 +60,21 @@ const CreditInitialFee = () => {
       return;
     }
 
-    dispatch(initialFeeChange(Number(value)));
+    dispatch(changeInitialFee(Number(value)));
   };
 
   const handleInitialFeeBlur = () => {
     const value = getValueInRange(initialFee, minValue, price);
 
-    dispatch(initialFeeChange(value));
+    dispatch(changeInitialFee(value));
   };
 
   const handleInitialFeeRangeChange = (evt) => {
-    dispatch(initialFeeChange(Math.ceil(Number(evt.target.value))));
+    dispatch(changeInitialFee(Math.ceil(Number(evt.target.value))));
   };
 
   useEffect(() => {
-    dispatch(initialFeeChange(Math.ceil(price * INITIAL_FEE_MIN_PART)));
+    dispatch(changeInitialFee(Math.ceil(price * INITIAL_FEE_MIN_PART)));
   }, [
     price,
   ]);

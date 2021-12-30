@@ -3,10 +3,10 @@ import {
 } from "@reduxjs/toolkit";
 
 import {
-  nameChange,
-  phoneChange,
-  emailChange,
-  requestNumberIncrease,
+  changeName,
+  changePhone,
+  changeEmail,
+  increaseRequestNumber,
 } from "../actions/user";
 
 const initialState = {
@@ -17,19 +17,19 @@ const initialState = {
 };
 
 export const reducer = createReducer(initialState, (builder) => {
-  builder.addCase(nameChange, (state, action) => {
+  builder.addCase(changeName, (state, action) => {
     state.name = action.payload;
   });
 
-  builder.addCase(phoneChange, (state, action) => {
+  builder.addCase(changePhone, (state, action) => {
     state.phone = action.payload;
   });
 
-  builder.addCase(emailChange, (state, action) => {
+  builder.addCase(changeEmail, (state, action) => {
     state.email = action.payload;
   });
 
-  builder.addCase(requestNumberIncrease, (state) => {
+  builder.addCase(increaseRequestNumber, (state) => {
     state.requestNumber += 1;
   });
 });

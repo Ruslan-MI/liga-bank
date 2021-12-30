@@ -8,7 +8,7 @@ import {
 } from "react-redux";
 
 import {
-  durationChange,
+  changeDuration,
 } from "../../../../../../store/actions/calculator";
 import {
   getCreditParameters,
@@ -53,17 +53,17 @@ const CreditDuration = () => {
       return;
     }
 
-    dispatch(durationChange(Number(value)));
+    dispatch(changeDuration(Number(value)));
   };
 
   const handleDurationBlur = () => {
     const value = getValueInRange(duration, DURATION_MIN_VALUE, DURATION_MAX_VALUE);
 
-    dispatch(durationChange(value));
+    dispatch(changeDuration(value));
   };
 
   const handleDurationRangeChange = (evt) => {
-    dispatch(durationChange(Number(evt.target.value)));
+    dispatch(changeDuration(Number(evt.target.value)));
   };
 
   useEffect(() => {

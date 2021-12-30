@@ -3,11 +3,11 @@ import {
 } from "@reduxjs/toolkit";
 
 import {
-  creditTypeChange,
-  priceChange,
-  initialFeeChange,
-  durationChange,
-  creditOptionsChange,
+  changeCreditType,
+  changePrice,
+  changeInitialFee,
+  changeDuration,
+  changeCreditOptions,
 } from "../actions/calculator";
 import {
   CreditParameter,
@@ -24,14 +24,19 @@ const initialState = {
 };
 
 export const reducer = createReducer(initialState, (builder) => {
-  builder.addCase(creditTypeChange, (state, action) => {
+  builder.addCase(changeCreditType, (state, action) => {
+    state.creditType = action.payload;
+
+    if (!state.creditType) {
+      return;
+    }
+
     const {
       PRICE_INITIAL_VALUE,
       INITIAL_FEE_MIN_PART,
       DURATION_MIN_VALUE,
-    } = CreditParameter[action.payload];
+    } = CreditParameter[state.creditType];
 
-    state.creditType = action.payload;
     state.price = PRICE_INITIAL_VALUE;
     state.initialFee = Math.ceil(PRICE_INITIAL_VALUE * INITIAL_FEE_MIN_PART);
     state.duration = DURATION_MIN_VALUE;
@@ -40,19 +45,19 @@ export const reducer = createReducer(initialState, (builder) => {
     state.isLifeInsurance = initialState.isLifeInsurance;
   });
 
-  builder.addCase(priceChange, (state, action) => {
+  builder.addCase(changePrice, (state, action) => {
     state.price = action.payload;
   });
 
-  builder.addCase(initialFeeChange, (state, action) => {
+  builder.addCase(changeInitialFee, (state, action) => {
     state.initialFee = action.payload;
   });
 
-  builder.addCase(durationChange, (state, action) => {
+  builder.addCase(changeDuration, (state, action) => {
     state.duration = action.payload;
   });
 
-  builder.addCase(creditOptionsChange, (state, action) => {
+  builder.addCase(changeCreditOptions, (state, action) => {
     const {
       name,
       checked,

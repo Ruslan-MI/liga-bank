@@ -11,7 +11,7 @@ import CreditInitialFee from "./credit-initial-fee/credit-initial-fee";
 import CreditDuration from "./credit-duration/credit-duration";
 import CreditOptions from "./credit-options/credit-options";
 import {
-  creditTypeChange,
+  changeCreditType,
 } from "../../../../../store/actions/calculator";
 import {
   CreditParameter,
@@ -58,7 +58,7 @@ const CreditParameters = () => {
 
   const handleTypesListClick = (evt) => {
     if (evt.target.matches(`.credit-parameters__types-button`)) {
-      dispatch(creditTypeChange(evt.target.dataset.value));
+      dispatch(changeCreditType(evt.target.dataset.value));
       dispatch(hideRequestForm());
 
       setState((prevState) => ({

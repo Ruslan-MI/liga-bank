@@ -8,7 +8,7 @@ import {
 } from "react-redux";
 
 import {
-  priceChange,
+  changePrice,
 } from "../../../../../../store/actions/calculator";
 import {
   getCreditParameters,
@@ -55,25 +55,25 @@ const CreditPrice = () => {
       return;
     }
 
-    dispatch(priceChange(Number(value)));
+    dispatch(changePrice(Number(value)));
   };
 
   const handleDecreasePriceClick = () => {
     const value = getValueInRange(price - PRICE_CHANGE_STEP, PRICE_MIN_VALUE, PRICE_MAX_VALUE);
 
-    dispatch(priceChange(value));
+    dispatch(changePrice(value));
   };
 
   const handleIncreasePriceClick = () => {
     const value = getValueInRange(price + PRICE_CHANGE_STEP, PRICE_MIN_VALUE, PRICE_MAX_VALUE);
 
-    dispatch(priceChange(value));
+    dispatch(changePrice(value));
   };
 
   const handlePriceBlur = () => {
     const value = getValueInRange(price, PRICE_MIN_VALUE, PRICE_MAX_VALUE);
 
-    dispatch(priceChange(value));
+    dispatch(changePrice(value));
   };
 
   useEffect(() => {

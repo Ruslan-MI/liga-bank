@@ -7,29 +7,29 @@ import {
 } from "../../const";
 
 const ActionType = {
-  CREDIT_TYPE_CHANGE: `${StoreNameSpace.CALCULATOR}/creditTypeChange`,
-  PRICE_CHANGE: `${StoreNameSpace.CALCULATOR}/priceChange`,
-  INITIAL_FEE_CHANGE: `${StoreNameSpace.CALCULATOR}/initialFeeChange`,
-  DURATION_CHANGE: `${StoreNameSpace.CALCULATOR}/durationChange`,
-  CREDIT_OPTIONS_CHANGE: `${StoreNameSpace.CALCULATOR}/creditOptionsChange`,
+  CHANGE_CREDIT_TYPE: `${StoreNameSpace.CALCULATOR}/changeCreditType`,
+  CHANGE_PRICE: `${StoreNameSpace.CALCULATOR}/changePrice`,
+  CHANGE_INITIAL_FEE: `${StoreNameSpace.CALCULATOR}/changeInitialFee`,
+  CHANGE_DURATION: `${StoreNameSpace.CALCULATOR}/changeDuration`,
+  CHANGE_CREDIT_OPTIONS: `${StoreNameSpace.CALCULATOR}/changeCreditOptions`,
 };
 
-export const creditTypeChange = createAction(ActionType.CREDIT_TYPE_CHANGE, (creditType) => ({
+export const changeCreditType = createAction(ActionType.CHANGE_CREDIT_TYPE, (creditType) => ({
   payload: creditType,
 }));
 
-export const priceChange = createAction(ActionType.PRICE_CHANGE, (price) => ({
+export const changePrice = createAction(ActionType.CHANGE_PRICE, (price) => ({
   payload: price,
 }));
 
-export const initialFeeChange = createAction(ActionType.INITIAL_FEE_CHANGE, (initialFee) => ({
+export const changeInitialFee = createAction(ActionType.CHANGE_INITIAL_FEE, (initialFee) => ({
   payload: initialFee,
 }));
 
-export const durationChange = createAction(ActionType.DURATION_CHANGE, (duration) => ({
+export const changeDuration = createAction(ActionType.CHANGE_DURATION, (duration) => ({
   payload: duration,
 }));
 
-export const creditOptionsChange = createAction(ActionType.CREDIT_OPTIONS_CHANGE, (data) => ({
+export const changeCreditOptions = createAction(ActionType.CHANGE_CREDIT_OPTIONS, (data) => ({
   payload: data,
 }));

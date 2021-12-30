@@ -5,7 +5,7 @@ import {
 } from "react-redux";
 
 import {
-  creditOptionsChange,
+  changeCreditOptions,
 } from "../../../../../../store/actions/calculator";
 import {
   CreditType,
@@ -32,7 +32,7 @@ const CreditOptions = () => {
       checked,
     } = evt.target;
 
-    dispatch(creditOptionsChange({
+    dispatch(changeCreditOptions({
       name,
       checked,
     }));

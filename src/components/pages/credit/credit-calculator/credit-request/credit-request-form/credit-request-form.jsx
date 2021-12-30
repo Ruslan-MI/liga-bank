@@ -8,11 +8,18 @@ import {
 } from "react-redux";
 
 import {
-  emailChange,
-  nameChange,
-  phoneChange,
-  requestNumberIncrease,
+  changeName,
+  changePhone,
+  changeEmail,
+  increaseRequestNumber,
 } from "../../../../../../store/actions/user";
+import {
+  changeCreditType,
+} from "../../../../../../store/actions/calculator";
+import {
+  hideRequestForm,
+  showGratitudeModal,
+} from "../../../../../../store/actions/page";
 import {
   StoreNameSpace,
 } from "../../../../../../const";
@@ -22,10 +29,6 @@ import {
 import {
   checkInvalidity,
 } from "../../../../../../utils/common";
-import {
-  hideRequestForm,
-  showGratitudeModal,
-} from "../../../../../../store/actions/page";
 
 const CreditRequestForm = () => {
   const {
@@ -48,7 +51,7 @@ const CreditRequestForm = () => {
       value,
     } = evt.target;
 
-    dispatch(nameChange(value));
+    dispatch(changeName(value));
 
     localStorage.setItem(name, value);
   };
@@ -70,7 +73,7 @@ const CreditRequestForm = () => {
       formattedValue = formatPhoneNumber(value);
     }
 
-    dispatch(phoneChange(formattedValue));
+    dispatch(changePhone(formattedValue));
 
     localStorage.setItem(name, formattedValue);
   };
@@ -81,7 +84,7 @@ const CreditRequestForm = () => {
       value,
     } = evt.target;
 
-    dispatch(emailChange(value));
+    dispatch(changeEmail(value));
 
     localStorage.setItem(name, value);
   };
@@ -89,8 +92,9 @@ const CreditRequestForm = () => {
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
 
-    dispatch(requestNumberIncrease());
+    dispatch(increaseRequestNumber());
     dispatch(hideRequestForm());
+    dispatch(changeCreditType(null));
     dispatch(showGratitudeModal());
   };
 
