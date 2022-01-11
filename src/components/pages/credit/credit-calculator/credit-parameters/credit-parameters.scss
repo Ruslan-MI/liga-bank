@@ -91,3 +91,21 @@
     background-color: $nav-border;
   }
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-parameters {
+    padding-bottom: 25px;
+  }
+
+  .credit-parameters__credit-types-wrapper {
+    margin-top: 19px;
+  }
+
+  .credit-parameters__types-button {
+    padding-left: 23px;
+
+    &--show-types-list::after {
+      right: 22px;
+    }
+  }
+}

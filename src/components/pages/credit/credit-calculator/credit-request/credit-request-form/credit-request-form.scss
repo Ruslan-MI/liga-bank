@@ -22,3 +22,35 @@
   padding: 19px 2px 16px 0;
   width: 100%;
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-request-form {
+    padding-top: 11px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .credit-request-form__paragraph {
+    padding-bottom: 30px;
+    width: 100%;
+
+    &--phone,
+    &--email {
+      width: 300px;
+      flex-grow: 1;
+    }
+
+    &--phone {
+      margin-right: 30px;
+    }
+  }
+
+  .credit-request-form__input {
+    font-size: 18px;
+    padding: 2px 22px 0;
+  }
+
+  .credit-request-form__submit-button {
+    padding: 16px 0px 16px 9px;
+  }
+}

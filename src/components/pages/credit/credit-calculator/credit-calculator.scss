@@ -82,3 +82,33 @@
     max-width: 708px;
   }
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-calculator {
+    padding-top: 80px;
+  }
+
+  .credit-calculator__heading {
+    font-size: 32px;
+  }
+
+  .credit-calculator__step {
+    padding-top: 41px;
+
+    &--second {
+      padding-top: 36px;
+    }
+  }
+
+  .credit-calculator__step-heading {
+    font-size: 18px;
+
+    &--second {
+      padding-bottom: 2px;
+    }
+  }
+
+  .credit-calculator__label {
+    margin-top: 13px;
+  }
+}

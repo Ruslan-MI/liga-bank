@@ -34,3 +34,28 @@
     text-transform: capitalize;
   }
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-request {
+    padding-top: 56px;
+  }
+
+  .credit-request__totals-list {
+    padding-top: 28px;
+    line-height: 100%;
+  }
+
+  .credit-request__totals-item {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0 18px;
+  }
+
+  .credit-request__totals-parameter {
+    margin: 0;
+  }
+
+  .credit-request__totals-value {
+    font-size: 22px;
+  }
+}

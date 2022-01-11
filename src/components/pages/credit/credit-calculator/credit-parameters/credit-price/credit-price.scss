@@ -20,3 +20,9 @@
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8h16M8 0v16' stroke='%231F1E25' stroke-width='2'/%3E%3C/svg%3E");
   }
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-price__button {
+    width: 64px;
+  }
+}

@@ -45,3 +45,41 @@
   width: 100%;
   padding: 19px 16px 16px;
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-offer {
+    padding: 54px 60px 60px;
+  }
+
+  .credit-offer__wrapper {
+    max-width: none;
+  }
+
+  .credit-offer__heading {
+    font-size: 22px;
+  }
+
+  .credit-offer__totals-list {
+    padding: 29px 0 3px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 50px;
+    align-items: start;
+  }
+
+  .credit-offer__totals-item {
+    padding-bottom: 31px;
+  }
+
+  .credit-offer__totals-parameter {
+    margin-top: 5px;
+  }
+
+  .credit-offer__totals-value {
+    font-size: 22px;
+  }
+
+  .credit-offer__submit-button {
+    padding-top: 16px;
+  }
+}

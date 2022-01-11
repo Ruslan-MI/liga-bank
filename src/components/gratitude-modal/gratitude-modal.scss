@@ -32,3 +32,22 @@
   top: 6px;
   right: 6px;
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .gratitude-modal {
+    padding: 54px 60px;
+  }
+
+  .gratitude-modal__heading {
+    font-size: 22px;
+  }
+
+  .gratitude-modal__text {
+    margin-top: 11px;
+  }
+
+  .gratitude-modal__close-button {
+    top: 19px;
+    right: 18px;
+  }
+}

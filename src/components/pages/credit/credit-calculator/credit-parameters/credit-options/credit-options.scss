@@ -36,3 +36,21 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-options__list {
+    padding: 10px 0;
+  }
+
+  .credit-options__item {
+    padding: 3px 0;
+  }
+
+  .credit-options__label {
+    font-size: 16px;
+
+    &::before {
+      top: 1px;
+    }
+  }
+}

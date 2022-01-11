@@ -26,3 +26,23 @@
   font-weight: 400;
   color: $label-text;
 }
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-warning {
+    padding: 54px 60px;
+  }
+
+  .credit-warning__wrapper {
+    max-width: none;
+  }
+
+  .credit-warning__heading {
+    max-width: 360px;
+    padding-right: 0;
+    font-size: 22px;
+  }
+
+  .credit-warning__text {
+    margin-top: 11px;
+  }
+}
