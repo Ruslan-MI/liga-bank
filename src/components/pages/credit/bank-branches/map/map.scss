@@ -26,12 +26,11 @@
 
   &:hover,
   &:focus {
-    outline: none;
-    border: 3px solid $link-background;
+    outline: 3px solid $link-background;
   }
 
   &:active {
-    border-color: $general-black;
+    outline-color: $general-black;
   }
 }
 
@@ -75,8 +74,7 @@
     content: "";
     width: 10px;
     height: 2px;
-    background-color: $general-black;
-    opacity: 0.5;
+    background-color: $map-controls-shadow;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,10 +92,10 @@
 
 .map__current-position-button {
   background-color: $general-white;
-  background-image: url(./img/arrow.jpg);
-  background-position: center;
+  background-image: url(./img/arrow.svg);
+  background-position: 4px 6px;
   background-repeat: no-repeat;
-  background-size: 14px;
+  background-size: 12px;
 }
 
 @media (min-width: $tablet-min-breakpoint) {
@@ -123,8 +121,8 @@
   }
 
   .map__current-position-button {
-    background-position: 4px 5px;
-    background-size: 17px;
+    background-position: 5px 7px;
+    background-size: 14px;
   }
 }
 
@@ -146,7 +144,7 @@
   }
 
   .map__current-position-button {
-    background-size: auto;
-    background-position: center;
+    background-position: 6px 9px;
+    background-size: 15px;
   }
 }
