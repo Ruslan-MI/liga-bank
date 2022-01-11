@@ -128,7 +128,14 @@
   }
 
   .credit-calculator__step {
-    padding-top: 38px;
+    &--first {
+      padding-top: 38px;
+      padding-bottom: 23px;
+    }
+
+    &--second {
+      padding-top: 15px;
+    }
   }
 
   .credit-calculator__step-heading {
