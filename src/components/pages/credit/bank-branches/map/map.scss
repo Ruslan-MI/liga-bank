@@ -27,11 +27,11 @@
   &:hover,
   &:focus {
     outline: none;
-    border: 3px solid $general-black;
+    border: 3px solid $link-background;
   }
 
   &:active {
-    border: 3px solid $link-background;
+    border-color: $general-black;
   }
 }
 

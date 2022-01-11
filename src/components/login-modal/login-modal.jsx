@@ -165,14 +165,14 @@ const LoginModal = ({
           <p className="login-modal__paragraph">
             <label className="login-modal__label login-modal__label--login" htmlFor="login">Логин</label>
             <span className="login-modal__input-wrapper">
-              <input className="login-modal__input input" type="text" id="login" name="login" required autoFocus
+              <input className="login-modal__input login-modal__input--login input" type="text" id="login" name="login" required autoFocus
                 defaultValue={login} ref={loginInputRef} onKeyDown={handleLoginInputShiftTabKeydown} />
             </span>
           </p>
           <p className="login-modal__paragraph">
             <label className="login-modal__label login-modal__label--password" htmlFor="password">Пароль</label>
             <span className="login-modal__input-wrapper">
-              <input className="login-modal__input input" type={state.isShowPassword ? `text` : `password`} id="password" name="password"
+              <input className="login-modal__input login-modal__input--password input" type={state.isShowPassword ? `text` : `password`} id="password" name="password"
                 required defaultValue={password} ref={passwordInputRef} />
               <button className={`login-modal__show-password-button ${state.isShowPassword ? `login-modal__show-password-button--active` : ``}`} type="button"
                 onPointerDown={handleShowPasswordButtonPointerDown} onPointerUp={handleShowPasswordButtonPointerUp}

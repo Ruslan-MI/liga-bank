@@ -7,4 +7,10 @@
   background-color: inherit;
   border: 1px solid $general-text;
   border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    border-color: $link-background;
+    outline: none;
+  }
 }

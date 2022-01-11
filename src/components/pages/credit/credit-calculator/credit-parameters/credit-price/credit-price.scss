@@ -10,6 +10,17 @@
   background-repeat: no-repeat;
   cursor: pointer;
 
+  &:hover,
+  &:focus {
+    border: 1px solid $link-background;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
   &--decrease {
     left: 0;
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231F1E25' stroke-width='2' d='M0 1h16'/%3E%3C/svg%3E");

@@ -8,6 +8,17 @@
   border: none;
   padding: 0;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 2px solid $general-black;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: $tablet-min-breakpoint) {

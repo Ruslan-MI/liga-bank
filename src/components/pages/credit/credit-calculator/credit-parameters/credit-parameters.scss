@@ -18,6 +18,15 @@
   color: inherit;
   cursor: pointer;
 
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
   &--show-types-list {
     height: 58px;
     font-weight: 500;
@@ -62,6 +71,15 @@
   margin-top: 5px;
   transform: translateY(9px);
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   &::-webkit-slider-thumb {
     appearance: none;

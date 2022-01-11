@@ -35,6 +35,17 @@
   border: none;
   padding: 0;
 
+  &:hover,
+  &:focus {
+    border: 2px solid $general-black;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
   &--open-menu {
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1h16M0 6h16M0 11h16' stroke='%231F1E25' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
     left: 0;
@@ -87,6 +98,15 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 14px 16px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 

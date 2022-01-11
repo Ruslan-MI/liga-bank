@@ -29,6 +29,16 @@
     cursor: pointer;
     user-select: none;
 
+    &:hover,
+    &:focus {
+      border: 2px solid $general-black;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
     &::before {
       content: "";
       margin-right: 10px;
@@ -66,9 +76,5 @@
   .tabs__input:checked + .tabs__label {
     color: inherit;
     background-color: $header-background;
-  }
-
-  .tabs__input:focus + .tabs__label {
-    outline: 1px auto $general-black;
   }
 }

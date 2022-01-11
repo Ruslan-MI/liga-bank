@@ -69,7 +69,7 @@ const Map = ({
     });
 
     initControls(map);
-  });
+  }, []);
 
   return (
     <div className="bank-branches__map map" id="map" ref={mapRef}>
