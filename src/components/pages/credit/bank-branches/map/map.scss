@@ -1,0 +1,152 @@
+.map {
+  height: 381px;
+}
+
+.map__controls {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 88px 6px 0 0;
+}
+
+.map__zoom-controls,
+.map__current-position-button {
+  box-shadow: 0px 0px 8px 4px $map-controls-shadow;
+}
+
+.map__zoom-button,
+.map__current-position-button {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border: 3px solid $general-black;
+  }
+
+  &:active {
+    border: 3px solid $link-background;
+  }
+}
+
+.map__zoom-controls {
+  width: 22px;
+  height: 45px;
+  background-color: $general-white;
+  border-radius: 11px;
+  position: relative;
+  margin-bottom: 7px;
+
+  &::before {
+    content: "";
+    width: 14px;
+    height: 2px;
+    background-color: $general-black;
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.map__zoom-button {
+  background-color: inherit;
+  position: absolute;
+  left: 0;
+
+  &--in {
+    top: 0;
+  }
+
+  &--out {
+    bottom: 0;
+  }
+
+  &--in::before,
+  &--in::after,
+  &--out::before {
+    content: "";
+    width: 10px;
+    height: 2px;
+    background-color: $general-black;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &--in::before,
+  &--out::before {
+    transform: translate(-50%, -50%);
+  }
+
+  &--in::after {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+}
+
+.map__current-position-button {
+  background-color: $general-white;
+  background-image: url(./img/arrow.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+@media (min-width: $tablet-min-breakpoint) {
+  .map {
+    height: 462px;
+  }
+
+  .map__controls {
+    padding: 104px 7px 0 0;
+  }
+
+  .map__zoom-controls {
+    width: 26px;
+    height: 54px;
+    border-radius: 13px;
+    margin-bottom: 10px;
+  }
+
+  .map__zoom-button,
+  .map__current-position-button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .map__current-position-button {
+    background-position: 4px 5px;
+    background-size: 17px;
+  }
+}
+
+@media (min-width: $desktop-min-breakpoint) {
+  .map__controls {
+    padding: 56px 12px 0 0;
+  }
+
+  .map__zoom-controls {
+    height: 64px;
+    width: 30px;
+    border-radius: 15px;
+  }
+
+  .map__zoom-button,
+  .map__current-position-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .map__current-position-button {
+    background-size: auto;
+    background-position: center;
+  }
+}

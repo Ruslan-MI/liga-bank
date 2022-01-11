@@ -8,7 +8,7 @@ export const getAdditionalInfoData = () => ([
     slogan: `Кредиты на любой случай`,
     link: {
       title: `Рассчитать кредит`,
-      href: `#`,
+      href: `#credit-calculator`,
     },
     images: [
       {
@@ -38,7 +38,7 @@ export const getAdditionalInfoData = () => ([
     backgroundImage: `img/slide-nearby-background.jpg`,
     link: {
       title: `Найти отделение`,
-      href: `#`,
+      href: `#bank-branches`,
     },
     id: nanoid(),
   },
@@ -71,7 +71,7 @@ export const getServicesData = () => ([
       `Потребительский кредит`,
     ],
     offer: {
-      __html: `Рассчитайте ежемесячный платеж\nи ставку по кредиту воспользовавшись\nнашим <a href="#">кредитным калькулятором</a>`,
+      __html: `Рассчитайте ежемесячный платеж\nи ставку по кредиту воспользовавшись\nнашим <a href="#credit-calculator">кредитным калькулятором</a>`,
     },
     picture: `img/car.jpg`,
     id: nanoid(),
@@ -106,5 +106,43 @@ export const getServicesData = () => ([
     },
     picture: `img/smartphone.jpg`,
     id: nanoid(),
+  },
+]);
+
+export const getBankBranches = () => ([
+  {
+    city: `Moscow`,
+    coords: {
+      lat: 55.75269667694121,
+      lng: 37.613409893289905,
+    },
+  },
+  {
+    city: `Saratov`,
+    coords: {
+      lat: 51.545816781816264,
+      lng: 46.01441986550114,
+    },
+  },
+  {
+    city: `Kazan`,
+    coords: {
+      lat: 55.78731510550702,
+      lng: 49.122736067764954,
+    },
+  },
+  {
+    city: `Tumen`,
+    coords: {
+      lat: 57.154306621130964,
+      lng: 65.5598507569445,
+    },
+  },
+  {
+    city: `Omsk`,
+    coords: {
+      lat: 54.9813021831944,
+      lng: 73.3715847719382,
+    },
   },
 ]);

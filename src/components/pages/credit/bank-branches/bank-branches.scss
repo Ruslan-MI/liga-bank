@@ -1,0 +1,40 @@
+.bank-branches {
+  padding-top: 14px;
+  padding-bottom: 60px;
+}
+
+.bank-branches__heading {
+  font-size: 22px;
+  line-height: 140%;
+  margin: 0;
+  padding: 0 15px 26px;
+}
+
+@media (max-width: $mobile-max-breakpoint) {
+  .bank-branches {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: $tablet-min-breakpoint) {
+  .bank-branches {
+    padding-top: 24px;
+  }
+
+  .bank-branches__heading {
+    font-size: 32px;
+    padding: 0 0 33px;
+  }
+}
+
+@media (min-width: $desktop-min-breakpoint) {
+  .bank-branches {
+    padding-top: 29px;
+  }
+
+  .bank-branches__heading {
+    font-size: 41px;
+    padding-bottom: 56px;
+  }
+}

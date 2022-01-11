@@ -7,6 +7,7 @@ import {
 import Header from "../../header/header";
 import CreditCalculator from "./credit-calculator/credit-calculator";
 import Aside from "./aside/aside";
+import BankBranches from "./bank-branches/bank-branches";
 import GratitudeModal from "../../gratitude-modal/gratitude-modal";
 import LoginModal from "../../login-modal/login-modal";
 import {
@@ -43,6 +44,7 @@ const Credit = () => {
         <h1 className="visually-hidden">Рассчитайте кредит</h1>
         <Aside />
         <CreditCalculator />
+        <BankBranches />
       </main>
       {isShowGratitudeModal && <GratitudeModal onModalClose={onGratitudeModalClose} />}
       {isShowLoginModal && <LoginModal onModalClose={onLoginModalClose} />}
