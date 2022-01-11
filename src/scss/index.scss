@@ -8,6 +8,7 @@
 @import "./blocks/close-button.scss";
 @import "./blocks/invalidity.scss";
 @import "./blocks/blue-button.scss";
+@import "./blocks/shake.scss";
 @import "../components/header/header.scss";
 @import "../components/main-logo/main-logo.scss";
 @import "../components/slider-pagination/slider-pagination.scss";
@@ -24,4 +25,5 @@
 @import "../components/pages/credit/credit-calculator/credit-request/credit-request.scss";
 @import "../components/pages/credit/credit-calculator/credit-request/credit-request-form/credit-request-form.scss";
 @import "../components/gratitude-modal/gratitude-modal.scss";
+@import "../components/login-modal/login-modal.scss";
 @import "../hocs/with-overlay/with-overlay.scss";

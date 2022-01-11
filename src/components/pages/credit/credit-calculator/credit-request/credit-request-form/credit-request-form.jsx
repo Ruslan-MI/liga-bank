@@ -29,6 +29,7 @@ import {
 } from "../../../../../../utils/phone";
 import {
   checkInvalidity,
+  getShakeAnimation,
 } from "../../../../../../utils/common";
 
 const CreditRequestForm = () => {
@@ -124,6 +125,8 @@ const CreditRequestForm = () => {
 
     if (isInvalid) {
       evt.preventDefault();
+
+      getShakeAnimation(document.forms[`credit-request-form`]);
     }
   };
 

@@ -1,0 +1,144 @@
+.login-modal {
+  width: 100%;
+  max-width: 678px;
+  line-height: 140%;
+  background-color: $header-background;
+  border: 4px solid $link-background;
+  padding: 45px 16px 38px;
+  margin: auto;
+}
+
+.login-modal__wrapper {
+  position: relative;
+  max-width: 502px;
+  margin: 0 auto;
+}
+
+.login-modal__logo-image {
+  width: 151px;
+  height: 31px;
+  transform: translateX(-6px);
+}
+
+.login-modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-modal__paragraph {
+  padding-top: 18px;
+  margin: 0;
+}
+
+.login-modal__label {
+  font-size: 16px;
+  font-weight: 400;
+  color: $label-text;
+  display: block;
+  margin-bottom: 3px;
+
+  &--password {
+    margin-bottom: 2px;
+  }
+}
+
+.login-modal__input-wrapper {
+  display: block;
+  position: relative;
+}
+
+.login-modal__input {
+  padding: 0 14px;
+}
+
+.login-modal__show-password-button {
+  width: 52px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url(./img/closed-eye.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &--active {
+    background-image: url(./img/opened-eye.svg);
+    background-size: 25px 25px;
+    background-position-y: 40%;
+  }
+}
+
+.login-modal__link {
+  order: 1;
+  color: $description-text;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.login-modal__submit-button {
+  margin-top: 30px;
+  padding: 19px 15px 16px;
+}
+
+.login-modal__close-button {
+  position: absolute;
+  top: -8px;
+  right: -9px;
+}
+
+@media (min-width: $tablet-min-breakpoint) {
+  .login-modal {
+    max-width: none;
+    padding: 55px 84px 56px;
+  }
+
+  .login-modal__wrapper {
+    max-width: none;
+  }
+
+  .login-modal__logo-image {
+    transform: translateX(-1px);
+  }
+
+  .login-modal__form {
+    padding-top: 5px;
+  }
+
+  .login-modal__paragraph {
+    padding-top: 23px;
+  }
+
+  .login-modal__show-password-button {
+    width: 70px;
+  }
+
+  .login-modal__link {
+    order: 0;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+
+  .login-modal__submit-button {
+    margin-top: 21px;
+    padding: 21px 15px 20px 14px;
+    font-size: 18px;
+  }
+
+  .login-modal__close-button {
+    top: -11px;
+    right: -12px;
+  }
+}
+
+@media (min-width: $desktop-min-breakpoint) {
+  .login-modal {
+    width: 544px;
+    padding: 55px 56px 56px;
+  }
+}

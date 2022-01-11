@@ -7,6 +7,8 @@ import {
   hideRequestForm,
   showGratitudeModal,
   hideGratitudeModal,
+  showLoginModal,
+  hideLoginModal,
   showMobileMenu,
   hideMobileMenu,
 } from "../actions/page";
@@ -14,6 +16,7 @@ import {
 const initialState = {
   isShowRequestForm: false,
   isShowGratitudeModal: false,
+  isShowLoginModal: false,
   isShowMobileMenu: false,
 };
 
@@ -32,6 +35,14 @@ export const reducer = createReducer(initialState, (builder) => {
 
   builder.addCase(hideGratitudeModal, (state) => {
     state.isShowGratitudeModal = false;
+  });
+
+  builder.addCase(showLoginModal, (state) => {
+    state.isShowLoginModal = true;
+  });
+
+  builder.addCase(hideLoginModal, (state) => {
+    state.isShowLoginModal = false;
   });
 
   builder.addCase(showMobileMenu, (state) => {

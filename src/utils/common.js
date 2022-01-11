@@ -7,6 +7,8 @@ import {
 const INCREMENT_STEP = 1;
 const REQUEST_NUMBER_LENGTH = 4;
 const ZEROES_IN_THOUSAND = 3;
+const SHAKE_ANIMATION_TIMEOUT = 600;
+const MILLISECONDS_IN_SECOND = 1000;
 
 const unitForms = {
   first: {
@@ -137,3 +139,11 @@ export const checkInvalidity = (inputs) => inputs.map((input) => {
 }).includes(false);
 
 export const formatRate = (rate) => `${rate}`.replace(`.`, `,`).concat(`0%`);
+
+export const getShakeAnimation = (element) => {
+  element.style.animation = `shake ${SHAKE_ANIMATION_TIMEOUT / MILLISECONDS_IN_SECOND}s`;
+
+  setTimeout(() => {
+    element.style.animation = ``;
+  }, SHAKE_ANIMATION_TIMEOUT);
+};

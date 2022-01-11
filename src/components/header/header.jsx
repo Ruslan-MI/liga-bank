@@ -12,6 +12,7 @@ import {
 } from "../../const";
 import {
   hideMobileMenu,
+  showLoginModal,
   showMobileMenu,
 } from "../../store/actions/page";
 
@@ -34,6 +35,8 @@ const Header = () => {
 
   const handleLoginLinkClick = (evt) => {
     evt.preventDefault();
+
+    dispatch(showLoginModal());
   };
 
   return (

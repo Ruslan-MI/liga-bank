@@ -8,16 +8,19 @@ import Header from "../../header/header";
 import CreditCalculator from "./credit-calculator/credit-calculator";
 import Aside from "./aside/aside";
 import GratitudeModal from "../../gratitude-modal/gratitude-modal";
+import LoginModal from "../../login-modal/login-modal";
 import {
   StoreNameSpace,
 } from "../../../const";
 import {
   hideGratitudeModal,
+  hideLoginModal,
 } from "../../../store/actions/page";
 
 const Credit = () => {
   const {
     isShowGratitudeModal,
+    isShowLoginModal,
     isShowMobileMenu,
   } = useSelector((globalState) => ({
     ...globalState[StoreNameSpace.PAGE],
@@ -29,6 +32,10 @@ const Credit = () => {
     dispatch(hideGratitudeModal());
   };
 
+  const onLoginModalClose = () => {
+    dispatch(hideLoginModal());
+  };
+
   return (
     <>
       <Header />
@@ -38,6 +45,7 @@ const Credit = () => {
         <CreditCalculator />
       </main>
       {isShowGratitudeModal && <GratitudeModal onModalClose={onGratitudeModalClose} />}
+      {isShowLoginModal && <LoginModal onModalClose={onLoginModalClose} />}
     </>
   );
 };
