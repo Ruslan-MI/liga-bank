@@ -1,44 +1,50 @@
-import React, {
-  useState,
-} from "react";
+import React from "react";
+import {
+  useDispatch,
+} from "react-redux";
+import {
+  useSelector,
+} from "react-redux";
 
-import mobileLogo from "./img/main-logo-mobile.svg";
-import tabletLogo from "./img/main-logo-tablet.svg";
-import desktopLogo from "./img/main-logo-desktop.svg";
+import MainLogo from "../main-logo/main-logo";
+import {
+  StoreNameSpace,
+} from "../../const";
+import {
+  hideMobileMenu,
+  showMobileMenu,
+} from "../../store/actions/page";
 
 const Header = () => {
-  const [
-    state,
-    setState,
-  ] = useState({
-    isMenuOpened: false,
-  });
+  const {
+    isShowMobileMenu,
+  } = useSelector((globalState) => ({
+    ...globalState[StoreNameSpace.PAGE],
+  }));
+
+  const dispatch = useDispatch();
 
   const handleOpenMenuButtonClick = () => {
-    setState(() => ({
-      isMenuOpened: true,
-    }));
+    dispatch(showMobileMenu());
   };
 
   const handleCloseMenuButtonClick = () => {
-    setState(() => ({
-      isMenuOpened: false,
-    }));
+    dispatch(hideMobileMenu());
+  };
+
+  const handleLoginLinkClick = (evt) => {
+    evt.preventDefault();
   };
 
   return (
-    <header className="page__header header">
-      <nav className={`header__nav ${state.isMenuOpened ? `header__nav--menu-opened` : ``} wrapper`}>
+    <header className={`page__header header ${isShowMobileMenu ? `header--menu-opened` : ``}`}>
+      <nav className={`header__nav ${isShowMobileMenu ? `header__nav--menu-opened` : ``} wrapper`}>
         <div className="header__nav-wrapper header__nav-wrapper--first">
           <a className="header__logo-link" href="#" title="Перейти на главную">
-            <picture>
-              <source media="(min-width: 1024px)" srcSet={desktopLogo} />
-              <source media="(min-width: 768px)" srcSet={tabletLogo} />
-              <img className="header__logo-image" src={mobileLogo} alt="ЛИГА Банк" width="116" height="19" />
-            </picture>
+            <MainLogo className="header__logo-image" />
           </a>
           <button className="header__nav-button header__nav-button--open-menu" type="button"
-            disabled={state.isMenuOpened} onClick={handleOpenMenuButtonClick}>
+            disabled={isShowMobileMenu} onClick={handleOpenMenuButtonClick}>
             <span className="visually-hidden">Открыть меню</span>
           </button>
           <button className="header__nav-button header__nav-button--close-menu" type="button"
@@ -63,7 +69,8 @@ const Header = () => {
           </ul>
           <ul className="header__nav-list header__nav-list--user-nav">
             <li className="header__nav-item">
-              <a className="header__nav-link header__nav-link--log-in" href="#">Войти в Интернет-банк</a>
+              <a className="header__nav-link header__nav-link--log-in" href="#login"
+                onClick={handleLoginLinkClick}>Войти в Интернет-банк</a>
             </li>
           </ul>
         </div>

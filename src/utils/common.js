@@ -114,24 +114,26 @@ export const checkInvalidity = (inputs) => inputs.map((input) => {
   const classList = input.parentElement.classList;
 
   if (validity.valueMissing) {
-    classList.add(`credit-calculator__invalidity--value-missing`);
+    classList.add(`invalidity--value-missing`);
   } else {
-    classList.remove(`credit-calculator__invalidity--value-missing`);
+    classList.remove(`invalidity--value-missing`);
   }
 
   if (validity.rangeUnderflow || validity.rangeOverflow || validity.typeMismatch || validity.patternMismatch) {
-    classList.add(`credit-calculator__invalidity--incorrect-value`);
+    classList.add(`invalidity--incorrect-value`);
   } else {
-    classList.remove(`credit-calculator__invalidity--incorrect-value`);
+    classList.remove(`invalidity--incorrect-value`);
   }
 
   if (validity.valid) {
-    classList.remove(`credit-calculator__invalidity`);
+    classList.remove(`invalidity`);
 
     return true;
   }
 
-  classList.add(`credit-calculator__invalidity`);
+  classList.add(`invalidity`);
 
   return false;
 }).includes(false);
+
+export const formatRate = (rate) => `${rate}`.replace(`.`, `,`).concat(`0%`);

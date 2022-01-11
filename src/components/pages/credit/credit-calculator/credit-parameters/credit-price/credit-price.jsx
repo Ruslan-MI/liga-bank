@@ -93,7 +93,7 @@ const CreditPrice = () => {
           <span className="visually-hidden">Уменьшить стоимость на {PRICE_CHANGE_STEP}</span>
         </button>
         <div className="credit-calculator__number-input-substrate">{`${formatPrice(price)} ${getUnitForm(price)}`}</div>
-        <input className="credit-calculator__input credit-calculator__input--number" type="number" id="price" name="price"
+        <input className="credit-calculator__input input" type="number" id="price" name="price"
           required value={price.toString()} min={PRICE_MIN_VALUE} max={PRICE_MAX_VALUE} ref={priceInputRef}
           onChange={handlePriceChange} onBlur={handlePriceBlur} />
         <button className="credit-price__button credit-price__button--increase" type="button"

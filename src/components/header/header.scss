@@ -5,6 +5,7 @@
 .header__nav {
   display: flex;
   flex-wrap: wrap;
+  background-color: inherit;
 }
 
 .header__nav-wrapper {
@@ -21,11 +22,6 @@
 .header__logo-link {
   display: block;
   padding: 14px 0 10px;
-}
-
-.header__logo-image {
-  width: 116px;
-  height: 19px;
 }
 
 .header__nav-button {
@@ -95,6 +91,12 @@
 }
 
 @media (max-width: $mobile-max-breakpoint) {
+  .header {
+    &--menu-opened {
+      min-height: 100%;
+    }
+  }
+
   .header__nav {
     padding: 0;
   }
@@ -184,10 +186,7 @@
   }
 
   .header__logo-image {
-    width: 134px;
-    height: 30px;
     transform: translateX(-1px);
-    object-fit: contain;
   }
 
   .header__nav-button {
@@ -237,11 +236,6 @@
     &--first {
       margin-right: 83px;
     }
-  }
-
-  .header__logo-image {
-    width: 150px;
-    height: 27px;
   }
 
   .header__nav-list {

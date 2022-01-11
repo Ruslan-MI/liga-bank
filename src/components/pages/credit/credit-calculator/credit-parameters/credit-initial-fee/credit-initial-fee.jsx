@@ -92,7 +92,7 @@ const CreditInitialFee = () => {
       <label className="credit-calculator__label" htmlFor="initial-fee">Первоначальный взнос</label>
       <div className="credit-calculator__number-input-wrapper">
         <div className="credit-calculator__number-input-substrate">{`${formatPrice(initialFee)} ${getUnitForm(initialFee)}`}</div>
-        <input className="credit-calculator__input credit-calculator__input--number" type="number" id="initial-fee" name="initial-fee"
+        <input className="credit-calculator__input input" type="number" id="initial-fee" name="initial-fee"
           required value={initialFee.toString()} min={minValue} max={price} ref={initialFeeInputRef}
           onChange={handleInitialFeeChange} onBlur={handleInitialFeeBlur} />
       </div>

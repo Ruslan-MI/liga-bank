@@ -7,11 +7,14 @@ import {
   hideRequestForm,
   showGratitudeModal,
   hideGratitudeModal,
+  showMobileMenu,
+  hideMobileMenu,
 } from "../actions/page";
 
 const initialState = {
   isShowRequestForm: false,
   isShowGratitudeModal: false,
+  isShowMobileMenu: false,
 };
 
 export const reducer = createReducer(initialState, (builder) => {
@@ -29,5 +32,13 @@ export const reducer = createReducer(initialState, (builder) => {
 
   builder.addCase(hideGratitudeModal, (state) => {
     state.isShowGratitudeModal = false;
+  });
+
+  builder.addCase(showMobileMenu, (state) => {
+    state.isShowMobileMenu = true;
+  });
+
+  builder.addCase(hideMobileMenu, (state) => {
+    state.isShowMobileMenu = false;
   });
 });

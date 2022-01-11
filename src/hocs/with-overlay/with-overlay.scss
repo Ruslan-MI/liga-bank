@@ -1,9 +1,12 @@
 .overlay {
-  display: block;
+  display: flex;
   width: 100%;
+  max-width: none;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   background-color: $transparent-overlay;
+  z-index: 1;
+  overflow-y: auto;
 }

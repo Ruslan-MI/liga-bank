@@ -1,3 +1,28 @@
+.credit-warning {
+  padding: 35px 15px 33px;
+  background-color: $header-background;
+  border-radius: 4px;
+  line-height: 140%;
+}
+
+.credit-warning__wrapper {
+  max-width: 558px;
+  margin: 0 auto;
+}
+
 .credit-warning__heading {
   padding-right: 50px;
+  max-width: 340px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.credit-warning__text {
+  max-width: 260px;
+  margin: 13px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: $label-text;
 }

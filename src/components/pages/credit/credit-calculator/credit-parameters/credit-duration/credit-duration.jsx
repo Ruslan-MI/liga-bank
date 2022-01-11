@@ -79,7 +79,7 @@ const CreditDuration = () => {
       <label className="credit-calculator__label" htmlFor="duration">Срок кредитования</label>
       <div className="credit-calculator__number-input-wrapper">
         <div className="credit-calculator__number-input-substrate">{`${duration} ${getUnitForm(duration, Unit.YEAR)}`}</div>
-        <input className="credit-calculator__input credit-calculator__input--number" type="number" id="duration" name="duration"
+        <input className="credit-calculator__input input" type="number" id="duration" name="duration"
           required value={duration.toString()} ref={durationInputRef} min={DURATION_MIN_VALUE} max={DURATION_MAX_VALUE}
           onChange={handleDurationChange} onBlur={handleDurationBlur} />
       </div>

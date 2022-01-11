@@ -4,10 +4,12 @@
 @import "./blocks/visually-hidden.scss";
 @import "./blocks/wrapper.scss";
 @import "./blocks/page.scss";
+@import "./blocks/input.scss";
+@import "./blocks/close-button.scss";
+@import "./blocks/invalidity.scss";
 @import "./blocks/blue-button.scss";
-@import "./blocks/totals-list.scss";
-@import "./blocks/message.scss";
 @import "../components/header/header.scss";
+@import "../components/main-logo/main-logo.scss";
 @import "../components/slider-pagination/slider-pagination.scss";
 @import "../components/pages/credit/aside/additional-info/additional-info.scss";
 @import "../components/pages/credit/aside/services/services.scss";
@@ -20,5 +22,5 @@
 @import "../components/pages/credit/credit-calculator/credit-result/credit-warning/credit-warning.scss";
 @import "../components/pages/credit/credit-calculator/credit-request/credit-request.scss";
 @import "../components/pages/credit/credit-calculator/credit-request/credit-request-form/credit-request-form.scss";
-@import "../components/pages/credit/credit-calculator/gratitude-modal/gratitude-modal.scss";
+@import "../components/gratitude-modal/gratitude-modal.scss";
 @import "../hocs/with-overlay/with-overlay.scss";

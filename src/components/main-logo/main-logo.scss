@@ -1,0 +1,19 @@
+.main-logo {
+  width: 116px;
+  height: 19px;
+}
+
+@media (min-width: $tablet-min-breakpoint) {
+  .main-logo {
+    width: 134px;
+    height: 30px;
+    object-fit: contain;
+  }
+}
+
+@media (min-width: $desktop-min-breakpoint) {
+  .main-logo {
+    width: 150px;
+    height: 27px;
+  }
+}

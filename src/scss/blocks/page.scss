@@ -8,10 +8,10 @@
   flex-grow: 1;
 }
 
-.page__modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+@media (max-width: $mobile-max-breakpoint) {
+  .page__main {
+    &--mobile-menu-opened {
+      display: none;
+    }
+  }
 }

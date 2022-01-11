@@ -29,12 +29,12 @@ ReactDOM.render((
   </Provider>
 ), document.querySelector(`#root`));
 
-document.querySelectorAll(`a[href="#"]`).forEach((item) => {
-  item.onclick = (evt) => {
-    evt.preventDefault(evt);
+document.body.addEventListener(`click`, (evt) => {
+  if (evt.target.matches(`a[href="#"]`)) {
+    evt.preventDefault();
 
-    toast(item.title || item.textContent);
-  };
+    toast(evt.target.title || evt.target.textContent);
+  }
 });
 
 reportWebVitals();

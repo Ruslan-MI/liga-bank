@@ -20,11 +20,12 @@ const CreditWarning = () => {
   }));
 
   return (
-    <section className="credit-result__warning credit-warning message">
-      <h3 className="credit-warning__heading message__heading">
-        Наш банк не выдаёт {creditTypeCyrillicMap[creditType][2]} меньше {formatPrice(CreditParameter[creditType].CREDIT_MIN_VALUE)} рублей.
-      </h3>
-      <p className="credit-warning__text message__text">Попробуйте использовать другие параметры для расчёта.</p>
+    <section className="credit-result__warning credit-warning">
+      <div className="credit-warning__wrapper">
+        <h3 className="credit-warning__heading">{`Наш банк не выдаёт ${creditTypeCyrillicMap[creditType][2]}
+          меньше ${formatPrice(CreditParameter[creditType].CREDIT_MIN_VALUE)} рублей.`}</h3>
+        <p className="credit-warning__text">Попробуйте использовать другие параметры для расчёта.</p>
+      </div>
     </section>
   );
 };

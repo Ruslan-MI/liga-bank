@@ -71,8 +71,8 @@ const CreditParameters = () => {
   return (
     <form className="credit-calculator__parameters-form credit-parameters" id="credit-parameters-form"
       action="https://echo.htmlacademy.ru" method="POST" onSubmit={handleFormSubmit} onChange={handleFormChange}>
-      <section className="credit-calculator__step">
-        <h3 className="credit-calculator__step-heading">Шаг 1. Цель кредита</h3>
+      <section className="credit-calculator__step credit-calculator__step--first">
+        <h3 className="credit-calculator__step-heading credit-calculator__step-heading--first">Шаг 1. Цель кредита</h3>
         <div className="credit-parameters__credit-types-wrapper">
           <button className={`credit-parameters__types-button credit-parameters__types-button--show-types-list ${state.isTypesListOpened ?
             `credit-parameters__types-button--list-opened` : ``}`} type="button" onClick={handleShowTypesListButtonClick}>
@@ -88,8 +88,8 @@ const CreditParameters = () => {
         </div>
       </section>
       {creditType &&
-        <section className="credit-calculator__step">
-          <h3 className="credit-calculator__step-heading">Шаг 2. Введите параметры кредита</h3>
+        <section className="credit-calculator__step credit-calculator__step--second">
+          <h3 className="credit-calculator__step-heading credit-calculator__step-heading--second">Шаг 2. Введите параметры кредита</h3>
           <CreditPrice />
           <CreditInitialFee />
           <CreditDuration />

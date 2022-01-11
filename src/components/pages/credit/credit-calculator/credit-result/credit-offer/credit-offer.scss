@@ -1,16 +1,47 @@
 .credit-offer {
-  padding-bottom: 40px;
+  padding: 35px 15px 40px;
+  background-color: $header-background;
+  border-radius: 4px;
+  line-height: 140%;
+}
+
+.credit-offer__wrapper {
+  max-width: 558px;
+  margin: 0 auto;
+}
+
+.credit-offer__heading {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
 }
 
 .credit-offer__totals-list {
   padding: 24px 0 15px;
+  margin: 0;
 }
 
 .credit-offer__totals-item {
-  margin-bottom: 14px;
+  padding-bottom: 14px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.credit-offer__totals-parameter {
+  font-size: 16px;
+  font-weight: 400;
+  color: $label-text;
+  margin-top: 2px;
+}
+
+.credit-offer__totals-value {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .credit-offer__submit-button {
   width: 100%;
-  padding: 19px 0 16px;
+  padding: 19px 16px 16px;
 }
