@@ -10,6 +10,10 @@
 
 .credit-options__input {
   appearance: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .credit-options__label {
@@ -18,11 +22,6 @@
   position: relative;
   cursor: pointer;
   user-select: none;
-
-  &:hover,
-  &:focus {
-    color: $link-background;
-  }
 
   &:active {
     opacity: 0.6;
@@ -38,6 +37,12 @@
     border: 1px solid $link-background;
     border-radius: 2px;
   }
+}
+
+.credit-options__input:focus + .credit-options__label,
+.credit-options__input:hover + .credit-options__label {
+  outline: 2px solid $general-black;
+  outline-offset: 3px;
 }
 
 .credit-options__input:checked + .credit-options__label::before {

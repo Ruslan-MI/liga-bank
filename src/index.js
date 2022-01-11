@@ -11,9 +11,6 @@ import App from "./components/app/app";
 import {
   rootReducer as reducer,
 } from "./store/reducers/root-reducer";
-import {
-  toast,
-} from "./utils/toast/toast";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -28,13 +25,5 @@ ReactDOM.render((
     </React.StrictMode>
   </Provider>
 ), document.querySelector(`#root`));
-
-document.body.addEventListener(`click`, (evt) => {
-  if (evt.target.matches(`a[href="#"]`)) {
-    evt.preventDefault();
-
-    toast(evt.target.title || evt.target.textContent);
-  }
-});
 
 reportWebVitals();

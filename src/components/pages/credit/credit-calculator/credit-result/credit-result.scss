@@ -1,3 +1,13 @@
+.credit-result {
+  padding-top: 20px;
+}
+
+@media (min-width: $tablet-min-breakpoint) {
+  .credit-result {
+    padding-top: 25px;
+  }
+}
+
 @media (min-width: $desktop-min-breakpoint) {
   .credit-result {
     max-width: 500px;

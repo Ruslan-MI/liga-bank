@@ -1,7 +1,3 @@
-.credit-parameters {
-  padding-bottom: 20px;
-}
-
 .credit-parameters__credit-types-wrapper {
   margin-top: 13px;
   border: 1px solid $general-text;
@@ -111,10 +107,6 @@
 }
 
 @media (min-width: $tablet-min-breakpoint) {
-  .credit-parameters {
-    padding-bottom: 25px;
-  }
-
   .credit-parameters__credit-types-wrapper {
     margin-top: 19px;
   }
@@ -131,7 +123,6 @@
 @media (min-width: $desktop-min-breakpoint) {
   .credit-parameters {
     width: 51.3%;
-    padding-bottom: 47px;
   }
 
   .credit-parameters__credit-types-wrapper {
