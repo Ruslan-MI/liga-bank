@@ -30,6 +30,8 @@
   color: $label-text;
   display: block;
   margin: 8px 0;
+  width: fit-content;
+  cursor: pointer;
 }
 
 .credit-calculator__number-input-wrapper {
@@ -148,5 +150,10 @@
 
   .credit-calculator__label {
     margin-top: 18px;
+  }
+
+  .credit-calculator__input,
+  .credit-calculator__number-input-substrate {
+    font-size: 18px;
   }
 }

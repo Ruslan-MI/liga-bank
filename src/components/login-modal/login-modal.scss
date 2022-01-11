@@ -36,6 +36,8 @@
   color: $label-text;
   display: block;
   margin-bottom: 3px;
+  width: fit-content;
+  cursor: pointer;
 
   &--password {
     margin-bottom: 2px;
