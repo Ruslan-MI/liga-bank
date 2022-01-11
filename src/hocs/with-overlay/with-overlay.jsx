@@ -3,8 +3,6 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 
-const page = document.querySelector(`.page`);
-
 const withOverlay = (Component) => {
   const WithOverlayComponent = ({
     onModalClose,
@@ -23,10 +21,12 @@ const withOverlay = (Component) => {
     };
 
     useEffect(() => {
-      page.style.overflow = `hidden`;
+      document.body.style.position = `fixed`;
+      document.body.style.overflow = `hidden`;
 
       return () => {
-        page.style.overflow = ``;
+        document.body.style.position = ``;
+        document.body.style.overflow = ``;
       };
     });
 

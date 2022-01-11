@@ -18,8 +18,6 @@ const GratitudeModal = ({
   const handleCloseButtonTabKeydown = (evt) => {
     if (evt.key === `Tab`) {
       evt.preventDefault();
-
-      closeButtonRef.current.focus();
     }
   };
 

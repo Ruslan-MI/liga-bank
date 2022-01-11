@@ -1,0 +1,28 @@
+.footer-info {
+  display: none;
+}
+
+@media (min-width: $tablet-min-breakpoint) {
+  .footer-info {
+    display: block;
+    padding: 11px 0;
+  }
+
+  .footer-info__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-info__item {
+    font-size: 12px;
+    line-height: 140%;
+    color: $description-text;
+  }
+}
+
+@media (min-width: $desktop-min-breakpoint) {
+  .footer-info {
+    padding-top: 43px;
+  }
+}

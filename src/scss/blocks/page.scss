@@ -9,7 +9,8 @@
 }
 
 @media (max-width: $mobile-max-breakpoint) {
-  .page__main {
+  .page__main,
+  .page__footer {
     &--mobile-menu-opened {
       display: none;
     }
