@@ -1,0 +1,8 @@
+@media (min-width: $desktop-min-breakpoint) {
+  .credit-result {
+    max-width: 500px;
+    flex-grow: 1;
+    padding-top: 40px;
+    margin-left: 20px;
+  }
+}

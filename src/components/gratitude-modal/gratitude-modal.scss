@@ -51,3 +51,15 @@
     right: 18px;
   }
 }
+
+@media (min-width: $desktop-min-breakpoint) {
+  .gratitude-modal {
+    padding: 54px 30px;
+    width: 500px;
+  }
+
+  .gratitude-modal__close-button {
+    top: 14px;
+    right: 13px;
+  }
+}

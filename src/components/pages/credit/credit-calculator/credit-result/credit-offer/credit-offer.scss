@@ -83,3 +83,14 @@
     padding-top: 16px;
   }
 }
+
+@media (min-width: $desktop-min-breakpoint) {
+  .credit-offer {
+    padding-left: 14px;
+    padding-right: 15px;
+  }
+
+  .credit-offer__wrapper {
+    width: fit-content;
+  }
+}

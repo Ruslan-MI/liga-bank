@@ -54,3 +54,9 @@
     }
   }
 }
+
+@media (min-width: $desktop-min-breakpoint) {
+  .credit-options__list {
+    padding: 15px 0;
+  }
+}

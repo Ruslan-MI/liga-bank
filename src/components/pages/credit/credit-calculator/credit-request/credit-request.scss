@@ -59,3 +59,16 @@
     font-size: 22px;
   }
 }
+
+@media (min-width: $desktop-min-breakpoint) {
+  .credit-request {
+    width: 770px;
+    margin: 0 auto;
+    background-color: $header-background;
+    padding: 68px 70px 70px;
+  }
+
+  .credit-request__totals-list {
+    padding-top: 16px;
+  }
+}

@@ -109,3 +109,14 @@
     }
   }
 }
+
+@media (min-width: $desktop-min-breakpoint) {
+  .credit-parameters {
+    width: 51.3%;
+    padding-bottom: 47px;
+  }
+
+  .credit-parameters__credit-types-wrapper {
+    margin-top: 26px;
+  }
+}

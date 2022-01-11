@@ -46,3 +46,14 @@
     margin-top: 11px;
   }
 }
+
+@media (min-width: $desktop-min-breakpoint) {
+  .credit-warning {
+    padding-left: 13px;
+    padding-right: 15px;
+  }
+
+  .credit-warning__wrapper {
+    max-width: 382px;
+  }
+}

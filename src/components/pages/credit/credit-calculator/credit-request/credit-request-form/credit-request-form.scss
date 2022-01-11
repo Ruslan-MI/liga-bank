@@ -54,3 +54,11 @@
     padding: 16px 0px 16px 9px;
   }
 }
+
+@media (min-width: $desktop-min-breakpoint) {
+  .credit-request-form__submit-button {
+    width: 198px;
+    margin: 10px auto 0;
+    padding-left: 2px;
+  }
+}
