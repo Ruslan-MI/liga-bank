@@ -121,7 +121,8 @@ export const checkInvalidity = (inputs) => inputs.map((input) => {
     classList.remove(`invalidity--value-missing`);
   }
 
-  if (validity.rangeUnderflow || validity.rangeOverflow || validity.typeMismatch || validity.patternMismatch) {
+  if (validity.rangeUnderflow || validity.rangeOverflow ||
+    validity.typeMismatch || validity.patternMismatch || validity.customError) {
     classList.add(`invalidity--incorrect-value`);
   } else {
     classList.remove(`invalidity--incorrect-value`);

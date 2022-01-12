@@ -25,6 +25,7 @@ import {
   StoreNameSpace,
 } from "../../../../../../const";
 import {
+  setPhoneInputInvalidity,
   formatPhoneNumber,
 } from "../../../../../../utils/phone";
 import {
@@ -131,6 +132,8 @@ const CreditRequestForm = () => {
   };
 
   useEffect(() => {
+    setPhoneInputInvalidity(phoneInputRef.current);
+
     if (state.isPhoneChanged) {
       checkInvalidity([
         phoneInputRef.current,

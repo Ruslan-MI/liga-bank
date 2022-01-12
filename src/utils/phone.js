@@ -2,7 +2,7 @@ import {
   removeNonDigits,
 } from "./common";
 
-const PHONE_NUMBER_MAX_LENGTH = 18;
+const PHONE_NUMBER_LENGTH = 11;
 
 const FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS = {
   SEVEN: `7`,
@@ -35,6 +35,9 @@ const phoneNumberStructure = {
   },
 };
 
+const checkIsRussianPhoneNumber = (number) =>
+  Object.values(FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS).includes(number[0]);
+
 export const formatPhoneNumber = (phoneNumber) => {
   const {
     countryCode,
@@ -49,62 +52,74 @@ export const formatPhoneNumber = (phoneNumber) => {
     return phoneNumberDigits;
   }
 
-  if (Object.values(FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS).includes(phoneNumberDigits[0])) {
-    if (phoneNumberDigits[0] === FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS.NINE) {
-      phoneNumberDigits = `${FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS.SEVEN}${phoneNumberDigits}`;
-    }
-
-    if (phoneNumberDigits[0] !== FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS.EIGHT) {
-      formattedNumber = `+`;
-    }
-
-    if (phoneNumberDigits.length > countryCode.firstDigitIndex) {
-      const {
-        firstDigitIndex,
-        length,
-      } = countryCode;
-
-      formattedNumber = `${formattedNumber}${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
-    }
-
-    if (phoneNumberDigits.length > operatorCode.firstDigitIndex) {
-      const {
-        firstDigitIndex,
-        length,
-      } = operatorCode;
-
-      formattedNumber = `${formattedNumber} (${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
-    }
-
-    if (phoneNumberDigits.length > userNumber.firstBlock.firstDigitIndex) {
-      const {
-        firstDigitIndex,
-        length,
-      } = userNumber.firstBlock;
-
-      formattedNumber = `${formattedNumber}) ${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
-    }
-
-    if (phoneNumberDigits.length > userNumber.secondBlock.firstDigitIndex) {
-      const {
-        firstDigitIndex,
-        length,
-      } = userNumber.secondBlock;
-
-      formattedNumber = `${formattedNumber}-${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
-    }
-
-    if (phoneNumberDigits.length > userNumber.thirdBlock.firstDigitIndex) {
-      const {
-        firstDigitIndex,
-        length,
-      } = userNumber.thirdBlock;
-
-      formattedNumber = `${formattedNumber}-${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
-    }
-
+  if (!checkIsRussianPhoneNumber(phoneNumberDigits)) {
     return formattedNumber;
   }
 
-  return `+${phoneNumberDigits}`.slice(0, PHONE_NUMBER_MAX_LENGTH);
+  if (phoneNumberDigits[countryCode.firstDigitIndex] === FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS.NINE) {
+    phoneNumberDigits = `${FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS.SEVEN}${phoneNumberDigits}`;
+  }
+
+  if (phoneNumberDigits[countryCode.firstDigitIndex] === FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS.EIGHT) {
+    phoneNumberDigits = `${FIRST_DIGITS_OF_RUSSIAN_PHONE_NUMBERS.SEVEN}${phoneNumberDigits.slice(operatorCode.firstDigitIndex)}`;
+  }
+
+  if (phoneNumberDigits.length > countryCode.firstDigitIndex) {
+    const {
+      firstDigitIndex,
+      length,
+    } = countryCode;
+
+    formattedNumber = `+${formattedNumber}${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
+  }
+
+  if (phoneNumberDigits.length > operatorCode.firstDigitIndex) {
+    const {
+      firstDigitIndex,
+      length,
+    } = operatorCode;
+
+    formattedNumber = `${formattedNumber} (${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
+  }
+
+  if (phoneNumberDigits.length > userNumber.firstBlock.firstDigitIndex) {
+    const {
+      firstDigitIndex,
+      length,
+    } = userNumber.firstBlock;
+
+    formattedNumber = `${formattedNumber}) ${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
+  }
+
+  if (phoneNumberDigits.length > userNumber.secondBlock.firstDigitIndex) {
+    const {
+      firstDigitIndex,
+      length,
+    } = userNumber.secondBlock;
+
+    formattedNumber = `${formattedNumber}-${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
+  }
+
+  if (phoneNumberDigits.length > userNumber.thirdBlock.firstDigitIndex) {
+    const {
+      firstDigitIndex,
+      length,
+    } = userNumber.thirdBlock;
+
+    formattedNumber = `${formattedNumber}-${phoneNumberDigits.slice(firstDigitIndex, firstDigitIndex + length)}`;
+  }
+
+  return formattedNumber;
+};
+
+export const setPhoneInputInvalidity = (input) => {
+  const phoneNumberDigits = removeNonDigits(input.value);
+
+  if (input.value.length > 0 && phoneNumberDigits.length < PHONE_NUMBER_LENGTH) {
+    input.setCustomValidity(`λ`);
+
+    return;
+  }
+
+  input.setCustomValidity(``);
 };
