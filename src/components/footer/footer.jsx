@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="footer__wrapper wrapper">
         <div className="footer__content-wrapper footer__content-wrapper--first">
           <p className="footer__logo">
-            <a className="footer__logo-link" href="#" title="Перейти на главную">
+            <a className="footer__logo-link" title="Вы находитесь на главной странице">
               <MainLogo className="footer__logo-image" />
             </a>
           </p>

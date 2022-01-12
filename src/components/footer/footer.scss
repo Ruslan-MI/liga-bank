@@ -22,17 +22,6 @@
   margin: 0;
 }
 
-.footer__logo-link {
-  &:hover,
-  &:focus {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-}
-
 .footer__logo-image {
   transform: translateX(-2px);
 }

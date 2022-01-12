@@ -43,7 +43,7 @@ const Header = () => {
     <header className={`page__header header ${isShowMobileMenu ? `header--menu-opened` : ``}`}>
       <nav className={`header__nav ${isShowMobileMenu ? `header__nav--menu-opened` : ``} wrapper`}>
         <div className="header__nav-wrapper header__nav-wrapper--first">
-          <a className="header__logo-link" href="#" title="Перейти на главную">
+          <a className="header__logo-link" title="Вы находитесь на главной странице">
             <MainLogo className="header__logo-image" />
           </a>
           <button className="header__nav-button header__nav-button--open-menu" type="button"

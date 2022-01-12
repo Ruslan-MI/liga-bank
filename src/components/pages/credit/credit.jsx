@@ -1,6 +1,4 @@
-import React, {
-  useEffect,
-} from "react";
+import React from "react";
 import {
   useDispatch,
   useSelector,
@@ -20,9 +18,6 @@ import {
   hideGratitudeModal,
   hideLoginModal,
 } from "../../../store/actions/page";
-import {
-  toast,
-} from "../../../utils/toast/toast";
 
 const Credit = () => {
   const {
@@ -42,24 +37,6 @@ const Credit = () => {
   const onLoginModalClose = () => {
     dispatch(hideLoginModal());
   };
-
-  useEffect(() => {
-    document.querySelectorAll(`a[href="#"]`).forEach((item) => {
-      item.onclick = (evt) => {
-        evt.preventDefault();
-
-        toast(item.title || item.textContent);
-      };
-    });
-
-    return () => {
-      document.querySelectorAll(`a[href="#"]`).forEach((item) => {
-        item.onclick = null;
-      });
-    };
-  }, [
-    isShowLoginModal,
-  ]);
 
   return (
     <>
