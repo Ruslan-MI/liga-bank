@@ -64,10 +64,15 @@
 
   &--credit {
     color: $light-text;
+    width: 210px;
   }
 
   &--tomorrow {
     padding-right: 50%;
+  }
+
+  &--nearby {
+    width: 180px;
   }
 }
 
@@ -153,9 +158,11 @@
     font-size: 18px;
     line-height: 21px;
     margin-top: 11px;
+    width: 260px;
 
     &--tomorrow {
       padding-right: 0;
+      width: 330px;
     }
   }
 
@@ -214,6 +221,7 @@
     font-size: 22px;
     line-height: 26px;
     margin-top: 14px;
+    width: 410px;
   }
 
   .additional-info__link {

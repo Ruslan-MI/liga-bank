@@ -138,7 +138,15 @@ export const checkInvalidity = (inputs) => inputs.map((input) => {
   return false;
 }).includes(false);
 
-export const formatRate = (rate) => `${rate}`.replace(`.`, `,`).concat(`0%`);
+export const formatRate = (rate) => {
+  const isFractionalNumber = rate % 1 !== 0;
+
+  if (isFractionalNumber) {
+    return `${rate}`.replace(`.`, `,`).concat(`0%`);
+  }
+
+  return `${rate}`.concat(`%`);
+};
 
 export const getShakeAnimation = (element) => {
   element.style.animation = `shake ${SHAKE_ANIMATION_TIMEOUT / MILLISECONDS_IN_SECOND}s`;
