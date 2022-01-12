@@ -28,6 +28,9 @@ const CreditOffer = ({
     ...globalState[StoreNameSpace.CALCULATOR],
   }));
 
+  const handleSubmitButtonClick = (evt) =>
+    !document.forms[`credit-parameters-form`].checkValidity() && evt.preventDefault();
+
   return (
     <section className="credit-result__offer credit-offer">
       <div className="credit-offer__wrapper">
@@ -50,7 +53,8 @@ const CreditOffer = ({
             <dd className="credit-offer__totals-value">{formatPrice(minSalary)} {getUnitForm(minSalary)}</dd>
           </div>
         </dl>
-        <button className="credit-offer__submit-button blue-button" type="submit" form="credit-parameters-form">Оформить заявку</button>
+        <button className="credit-offer__submit-button blue-button" type="submit" form="credit-parameters-form"
+          onClick={handleSubmitButtonClick}>Оформить заявку</button>
       </div>
     </section>
   );
